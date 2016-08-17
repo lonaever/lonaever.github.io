@@ -1,0 +1,631 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="折腾了半天终于是跑起来了。坑还是多啊，趁热赶紧记下来，就刚好作为第一篇日志了。我是按照这两篇文章开始配置的，但是中途却依然遇到好多错误。
+
+http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/
+http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Octopress+Github配置个人博客">
+<meta property="og:url" content="http://yoursite.com/2015/12/24/octopress配置/index.html">
+<meta property="og:site_name" content="lonaever的记忆">
+<meta property="og:description" content="折腾了半天终于是跑起来了。坑还是多啊，趁热赶紧记下来，就刚好作为第一篇日志了。我是按照这两篇文章开始配置的，但是中途却依然遇到好多错误。
+
+http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/
+http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus">
+<meta property="og:updated_time" content="2016-08-17T09:07:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Octopress+Github配置个人博客">
+<meta name="twitter:description" content="折腾了半天终于是跑起来了。坑还是多啊，趁热赶紧记下来，就刚好作为第一篇日志了。我是按照这两篇文章开始配置的，但是中途却依然遇到好多错误。
+
+http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/
+http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/12/24/octopress配置/"/>
+
+  <title> Octopress+Github配置个人博客 | lonaever的记忆 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lonaever的记忆</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记不住的东西</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Octopress+Github配置个人博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-24T18:07:40+08:00" content="2015-12-24">
+              2015-12-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/octopress/" itemprop="url" rel="index">
+                    <span itemprop="name">octopress</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>折腾了半天终于是跑起来了。坑还是多啊，趁热赶紧记下来，就刚好作为第一篇日志了。<br>我是按照这两篇文章开始配置的，但是中途却依然遇到好多错误。</p>
+<ul>
+<li><a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/" target="_blank" rel="external">http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/</a></li>
+<li><a href="http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/" target="_blank" rel="external">http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/</a></li>
+</ul>
+<p>我的安装环境：</p>
+<blockquote>
+<p>Mac OSX EI Capitan 10.11</p>
+</blockquote>
+<p>###配置环境###</p>
+<p>mac系统下自带了ruby，EI Captian下自带的版本是2.0.0 。但是这个版本在执行bundle install的时候，各种啃爹的错误就来了。所以办法是先升级ruby至2.2.3以上吧。<br>升级ruby就牵动了一堆事：</p>
+<ul>
+<li><p>安装<a href="http://brew.sh/" target="_blank" rel="external">homebrew</a></p>
+</li>
+<li><p>通过brew安装<a href="http://octopress.org/docs/setup/rbenv/]" target="_blank" rel="external">rbenv</a></p>
+</li>
+<li><p>使用rbenv升级ruby,rbenv实际上可以安装多个ruby的环境。</p>
+</li>
+<li><p>如果你的gem太老，可能也会有问题。最好升级一下.sudo gem update –system</p>
+</li>
+</ul>
+<p>注意：osx ei下多了一个叫rootless的功能，导致在/usr/bin/下是没有写入权限的。要想省事就是关闭掉这个功能。</p>
+<blockquote>
+<p>1.Boot into the Recovery HD by restarting whilst holding ⌘R.</p>
+<p>2.Open Terminal (from the Utilities menu).</p>
+<p>3.Run the following command in Terminal:</p>
+</blockquote>
+<pre><code>csrutil disable
+</code></pre><blockquote>
+<p>4.Restart.</p>
+</blockquote>
+<p>###安装octopress###<br> 能翻墙就翻墙吧，花点钱，省事。</p>
+<p> 1.clone octopress</p>
+<pre><code>git clone git://github.com/imathis/octopress.git octopress
+cd octopress
+</code></pre><p> 2.安装依赖</p>
+<pre><code>sudo gem install bundler
+rbenv rehash 
+bundle install
+rake install
+</code></pre><p> 3.成功后，通过rake preview就能看到本地地址了。</p>
+<h3 id="push到github的操作，完全按照上面文章来做，没有问题。"><a href="#push到github的操作，完全按照上面文章来做，没有问题。" class="headerlink" title="push到github的操作，完全按照上面文章来做，没有问题。"></a>push到github的操作，完全按照上面文章来做，没有问题。</h3><h3 id="美化，汉化，评论，随便搜搜就能改动一些了。"><a href="#美化，汉化，评论，随便搜搜就能改动一些了。" class="headerlink" title="美化，汉化，评论，随便搜搜就能改动一些了。"></a>美化，汉化，评论，随便搜搜就能改动一些了。</h3>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/30/UITabBar配置/" rel="prev" title="ios UITabBar配置">
+                ios UITabBar配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="lonaever" />
+          <p class="site-author-name" itemprop="name">lonaever</p>
+          <p class="site-description motion-element" itemprop="description">ios android 技术blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#push到github的操作，完全按照上面文章来做，没有问题。"><span class="nav-number">1.</span> <span class="nav-text">push到github的操作，完全按照上面文章来做，没有问题。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#美化，汉化，评论，随便搜搜就能改动一些了。"><span class="nav-number">2.</span> <span class="nav-text">美化，汉化，评论，随便搜搜就能改动一些了。</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lonaever</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

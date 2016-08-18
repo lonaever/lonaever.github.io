@@ -308,39 +308,12 @@
 
       
         
-          
-            <p>重装系统后，真是不想再去折腾一遍octopress了，实在需要太多配置。osX EICapion 下升级个ruby都是整死人。果断改用hexo，5分钟就能搞定。再把octopress的md文件直接复制过来，就行。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>官方网站：<a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a></p>
-<p>1.安装node.js，官方就推荐了安装方式。<br>The best way to install Node.js is with nvm.</p>
-<p>2.安装命令一行搞定</p>
-<pre><code>$ npm install -g hexo-cli
-</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
-<li>主题选用<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">nexT</a>，非常简洁，中文文档也很细致。</li>
-<li><p>记住开启分类或者标签都需要先执行<code>$ hexo new page tags</code>，并且在source中修改md文件，增加<code>type: &quot;tags&quot;</code>，文章中用-这种标记来写分类和标识。直接在冒号后写，会看不见，不知道为什么。</p>
-<pre><code>categories:
-- Sports
-- Baseball
-tags:
-- Injury
-- Fight
-- Shocking
-</code></pre></li>
-<li><p>分类的名称和文件夹名称是可以独立配置的，如</p>
-<pre><code>default_category: uncategorized
-category_map:
-编程: programming
-生活: life
-其他: other
-</code></pre></li>
-</ol>
-<h3 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h3><p>不追求过多细节，就这么开始写吧。</p>
-<pre><code>$ hexo new [layout] &lt;title&gt;
-$ hexo server
-</code></pre><blockquote>
-<p>参考：<a href="http://div.io/topic/1691" target="_blank" rel="external">http://div.io/topic/1691</a> 里面很详细，我也是照着做的。</p>
-</blockquote>
-
-          
+          <p>重装系统后，真是不想再去折腾一遍octopress了，实在需要太多配置。osX EICapion 下升级个ruby都是整死人。果断改用hexo，5分钟就能搞定。再把octopress的md文件直接复制过来，就行。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/17/hexo很方便，很美妙/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -457,10 +430,12 @@ $ hexo server
 
       
         
-          
-            <p>现在基本是使用android6.0以上的样式，作为AppTheme了。配置样式真的很烦，一层又一层。将一些常用的地方，做个记录是必须的。</p>
-
-          
+          <p>现在基本是使用android6.0以上的样式，作为AppTheme了。配置样式真的很烦，一层又一层。将一些常用的地方，做个记录是必须的。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/17/常用android样式收集/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -578,13 +553,11 @@ $ hexo server
       
         
           
-            <p>很长时间没有使用UITabBarController作为app的UI结构了，竟然有点遗忘了。<br>ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。</p>
-<p>如果需要使用图标本身的颜色来设置，需要通过代码调用</p>
-<pre><code>setSelectedImage:[[UIImage imageNamed:@&quot;xx&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-和
-setImage:
-</code></pre><p>UIImageRenderingModeAlwaysOriginal这个参数就表明了，使用原图。</p>
-<p>示例：<br>下面是配置TabBar的全局方法：</p>
+            <p>很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。</p>
+<p>ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。</p>
+<h3 id="使用图标本身颜色"><a href="#使用图标本身颜色" class="headerlink" title="使用图标本身颜色"></a>使用图标本身颜色</h3><pre><code>setSelectedImage:[[UIImage imageNamed:@&quot;xx&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+</code></pre><p><code>UIImageRenderingModeAlwaysOriginal</code>这个参数就表明了，使用原图。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面是配置TabBar的全局方法：</p>
 <pre><code>//设置选中后图标的颜色
 [[UITabBar appearance] setTintColor:[UIColor colorWithHexString:global_tint]];
 //背景色
@@ -599,9 +572,8 @@ setImage:
 在相应的controller中调用。
 [self.tabBarItem setSelectedImage:[[UIImage imageNamed:@&quot;yx_ico1.png&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 [self.tabBarItem setImage:[[UIImage imageNamed:@&quot;yx_ico.png&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+</code></pre><p>或者在tabcontroller的子类中，找到tabItems，分别进行设置。</p>
 
-或者在tabcontroller的子类中，找到tabItems，分别进行设置。
-</code></pre>
           
         
       
@@ -700,50 +672,18 @@ setImage:
 
       
         
-          
-            <p>折腾了半天终于是跑起来了。坑还是多啊，趁热赶紧记下来，就刚好作为第一篇日志了。<br>我是按照这两篇文章开始配置的，但是中途却依然遇到好多错误。</p>
+          <p><em>octopress 已不再维护，换hexo吧</em></p>
+<p>折腾了半天终于是跑起来了。坑还是多啊，趁热赶紧记下来，就刚好作为第一篇日志了。<br>我是按照这两篇文章开始配置的，但是中途却依然遇到好多错误。</p>
 <ul>
-<li><a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/" target="_blank" rel="external">http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/</a></li>
-<li><a href="http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/" target="_blank" rel="external">http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/</a></li>
+<li><a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/">http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/</a></li>
+<li><a href="http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/">http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/</a></li>
 </ul>
-<p>我的安装环境：</p>
-<blockquote>
-<p>Mac OSX EI Capitan 10.11</p>
-</blockquote>
-<p>###配置环境###</p>
-<p>mac系统下自带了ruby，EI Captian下自带的版本是2.0.0 。但是这个版本在执行bundle install的时候，各种啃爹的错误就来了。所以办法是先升级ruby至2.2.3以上吧。<br>升级ruby就牵动了一堆事：</p>
-<ul>
-<li><p>安装<a href="http://brew.sh/" target="_blank" rel="external">homebrew</a></p>
-</li>
-<li><p>通过brew安装<a href="http://octopress.org/docs/setup/rbenv/]" target="_blank" rel="external">rbenv</a></p>
-</li>
-<li><p>使用rbenv升级ruby,rbenv实际上可以安装多个ruby的环境。</p>
-</li>
-<li><p>如果你的gem太老，可能也会有问题。最好升级一下.sudo gem update –system</p>
-</li>
-</ul>
-<p>注意：osx ei下多了一个叫rootless的功能，导致在/usr/bin/下是没有写入权限的。要想省事就是关闭掉这个功能。</p>
-<blockquote>
-<p>1.Boot into the Recovery HD by restarting whilst holding ⌘R.</p>
-<p>2.Open Terminal (from the Utilities menu).</p>
-<p>3.Run the following command in Terminal:</p>
-</blockquote>
-<pre><code>csrutil disable
-</code></pre><blockquote>
-<p>4.Restart.</p>
-</blockquote>
-<p>###安装octopress###<br> 能翻墙就翻墙吧，花点钱，省事。</p>
-<p> 1.clone octopress</p>
-<pre><code>git clone git://github.com/imathis/octopress.git octopress
-cd octopress
-</code></pre><p> 2.安装依赖</p>
-<pre><code>sudo gem install bundler
-rbenv rehash 
-bundle install
-rake install
-</code></pre><p> 3.成功后，通过rake preview就能看到本地地址了。</p>
-<h3 id="push到github的操作，完全按照上面文章来做，没有问题。"><a href="#push到github的操作，完全按照上面文章来做，没有问题。" class="headerlink" title="push到github的操作，完全按照上面文章来做，没有问题。"></a>push到github的操作，完全按照上面文章来做，没有问题。</h3><h3 id="美化，汉化，评论，随便搜搜就能改动一些了。"><a href="#美化，汉化，评论，随便搜搜就能改动一些了。" class="headerlink" title="美化，汉化，评论，随便搜搜就能改动一些了。"></a>美化，汉化，评论，随便搜搜就能改动一些了。</h3>
-          
+<p>我的安装环境：Mac OSX EI Capitan 10.11</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/24/octopress配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

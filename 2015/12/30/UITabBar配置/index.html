@@ -84,22 +84,22 @@
 
 
 
-<meta name="description" content="很长时间没有使用UITabBarController作为app的UI结构了，竟然有点遗忘了。ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。
-如果需要使用图标本身的颜色来设置，需要通过代码调用
-setSelectedImage:[[UIImage im">
+<meta name="description" content="很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。
+ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。
+使用图标本身颜色setSelectedImage:[[UIImage imageNamed:@&amp;quo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios UITabBar配置">
 <meta property="og:url" content="http://lonaever.me/2015/12/30/UITabBar配置/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="很长时间没有使用UITabBarController作为app的UI结构了，竟然有点遗忘了。ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。
-如果需要使用图标本身的颜色来设置，需要通过代码调用
-setSelectedImage:[[UIImage im">
-<meta property="og:updated_time" content="2016-08-18T06:45:19.000Z">
+<meta property="og:description" content="很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。
+ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。
+使用图标本身颜色setSelectedImage:[[UIImage imageNamed:@&amp;quo">
+<meta property="og:updated_time" content="2016-08-18T08:30:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios UITabBar配置">
-<meta name="twitter:description" content="很长时间没有使用UITabBarController作为app的UI结构了，竟然有点遗忘了。ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。
-如果需要使用图标本身的颜色来设置，需要通过代码调用
-setSelectedImage:[[UIImage im">
+<meta name="twitter:description" content="很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。
+ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。
+使用图标本身颜色setSelectedImage:[[UIImage imageNamed:@&amp;quo">
 
 
 
@@ -328,13 +328,11 @@ setSelectedImage:[[UIImage im">
       
 
       
-        <p>很长时间没有使用UITabBarController作为app的UI结构了，竟然有点遗忘了。<br>ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。</p>
-<p>如果需要使用图标本身的颜色来设置，需要通过代码调用</p>
-<pre><code>setSelectedImage:[[UIImage imageNamed:@&quot;xx&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-和
-setImage:
-</code></pre><p>UIImageRenderingModeAlwaysOriginal这个参数就表明了，使用原图。</p>
-<p>示例：<br>下面是配置TabBar的全局方法：</p>
+        <p>很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。</p>
+<p>ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。</p>
+<h3 id="使用图标本身颜色"><a href="#使用图标本身颜色" class="headerlink" title="使用图标本身颜色"></a>使用图标本身颜色</h3><pre><code>setSelectedImage:[[UIImage imageNamed:@&quot;xx&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+</code></pre><p><code>UIImageRenderingModeAlwaysOriginal</code>这个参数就表明了，使用原图。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面是配置TabBar的全局方法：</p>
 <pre><code>//设置选中后图标的颜色
 [[UITabBar appearance] setTintColor:[UIColor colorWithHexString:global_tint]];
 //背景色
@@ -349,9 +347,8 @@ setImage:
 在相应的controller中调用。
 [self.tabBarItem setSelectedImage:[[UIImage imageNamed:@&quot;yx_ico1.png&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 [self.tabBarItem setImage:[[UIImage imageNamed:@&quot;yx_ico.png&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+</code></pre><p>或者在tabcontroller的子类中，找到tabItems，分别进行设置。</p>
 
-或者在tabcontroller的子类中，找到tabItems，分别进行设置。
-</code></pre>
       
     </div>
 
@@ -510,7 +507,7 @@ setImage:
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用图标本身颜色"><span class="nav-number">1.</span> <span class="nav-text">使用图标本身颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a></li></ol></div>
             
           </div>
         </section>

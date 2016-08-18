@@ -190,6 +190,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
@@ -200,12 +210,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            归档
+            标签
           </a>
         </li>
       
@@ -298,10 +308,13 @@
 <p>2.安装命令一行搞定</p>
 <pre><code>$ npm install -g hexo-cli
 </code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>1.主题选用<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">nexT</a>，非常简洁，中文文档也很细致。</p>
-<h2 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h2><p>不追求过多细节，就这么开始写吧。</p>
+<h3 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h3><p>不追求过多细节，就这么开始写吧。</p>
 <pre><code>$ hexo new [layout] &lt;title&gt;
 $ hexo server
-</code></pre>
+</code></pre><blockquote>
+<p>参考：<a href="http://div.io/topic/1691" target="_blank" rel="external">http://div.io/topic/1691</a> 里面很详细，我也是照着做的。</p>
+</blockquote>
+
           
         
       
@@ -370,6 +383,25 @@ $ hexo server
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -394,7 +426,8 @@ $ hexo server
       
         
           
-            
+            <p>现在基本是使用android6.0以上的样式，作为AppTheme了。配置样式真的很烦，一层又一层。将一些常用的地方，做个记录是必须的。</p>
+
           
         
       
@@ -598,25 +631,6 @@ setImage:
           </span>
 
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/octopress/" itemprop="url" rel="index">
-                    <span itemprop="name">octopress</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
 
           
             
@@ -767,10 +781,10 @@ rake install
 
           
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags">
                 <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 

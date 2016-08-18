@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="lonaever, ios, android" />
 
 
 
@@ -87,7 +87,7 @@
 <meta name="description" content="ios android 技术blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="lonaever的记忆">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://lonaever.me/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
 <meta property="og:description" content="ios android 技术blog">
 <meta name="twitter:card" content="summary">
@@ -113,7 +113,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://lonaever.me/"/>
 
   <title> lonaever的记忆 </title>
 </head>
@@ -281,6 +281,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/17/hexo很方便，很美妙/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/hexo很方便，很美妙/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -307,8 +314,26 @@
 <p>1.安装node.js，官方就推荐了安装方式。<br>The best way to install Node.js is with nvm.</p>
 <p>2.安装命令一行搞定</p>
 <pre><code>$ npm install -g hexo-cli
-</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>1.主题选用<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">nexT</a>，非常简洁，中文文档也很细致。</p>
-<h3 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h3><p>不追求过多细节，就这么开始写吧。</p>
+</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
+<li>主题选用<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">nexT</a>，非常简洁，中文文档也很细致。</li>
+<li><p>记住开启分类或者标签都需要先执行<code>$ hexo new page tags</code>，并且在source中修改md文件，增加<code>type: &quot;tags&quot;</code>，文章中用-这种标记来写分类和标识。直接在冒号后写，会看不见，不知道为什么。</p>
+<pre><code>categories:
+- Sports
+- Baseball
+tags:
+- Injury
+- Fight
+- Shocking
+</code></pre></li>
+<li><p>分类的名称和文件夹名称是可以独立配置的，如</p>
+<pre><code>default_category: uncategorized
+category_map:
+编程: programming
+生活: life
+其他: other
+</code></pre><h3 id="开始吧"><a href="#开始吧" class="headerlink" title="开始吧"></a>开始吧</h3></li>
+</ol>
+<p>不追求过多细节，就这么开始写吧。</p>
 <pre><code>$ hexo new [layout] &lt;title&gt;
 $ hexo server
 </code></pre><blockquote>
@@ -404,6 +429,13 @@ $ hexo server
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/17/常用android样式收集/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/常用android样式收集/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -517,6 +549,13 @@ $ hexo server
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/30/UITabBar配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/UITabBar配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -633,6 +672,13 @@ setImage:
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/24/octopress配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/24/octopress配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -782,7 +828,7 @@ rake install
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -917,9 +963,30 @@ rake install
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lonaever"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
 
 
 

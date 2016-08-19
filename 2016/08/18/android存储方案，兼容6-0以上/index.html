@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="备忘," />
+  <meta name="keywords" content="lonaever, ios, android" />
 
 
 
@@ -84,31 +84,22 @@
 
 
 
-<meta name="description" content="很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。
-其实主要包含如下几个问题：
-
-bar的背景设置
-bar上的图标如何设置，颜色用什么控制
-indicator如何设置">
+<meta name="description" content="android的存储本来没啥好说的。但在6.0上由于有了权限申请这个环节，以前随意在SD卡上建目录的方式，要注意才行了。
+android api提供给应用存储的路径就有两个，6.0以上应该尽量使用它们。这两个目录是不需要申请权限的，甚至在xml中都不需要配置。只是为了兼容之前的版本，我们仍然需要写上
+&amp;lt;uses-permission android:name=&amp;quot;android.pe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios UITabBar配置">
-<meta property="og:url" content="http://lonaever.me/2015/12/30/UITabBar配置/index.html">
+<meta property="og:title" content="android存储方案，兼容6.0以上">
+<meta property="og:url" content="http://lonaever.me/2016/08/18/android存储方案，兼容6-0以上/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。
-其实主要包含如下几个问题：
-
-bar的背景设置
-bar上的图标如何设置，颜色用什么控制
-indicator如何设置">
-<meta property="og:updated_time" content="2016-08-18T08:34:19.000Z">
+<meta property="og:description" content="android的存储本来没啥好说的。但在6.0上由于有了权限申请这个环节，以前随意在SD卡上建目录的方式，要注意才行了。
+android api提供给应用存储的路径就有两个，6.0以上应该尽量使用它们。这两个目录是不需要申请权限的，甚至在xml中都不需要配置。只是为了兼容之前的版本，我们仍然需要写上
+&amp;lt;uses-permission android:name=&amp;quot;android.pe">
+<meta property="og:updated_time" content="2016-08-19T07:26:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios UITabBar配置">
-<meta name="twitter:description" content="很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。
-其实主要包含如下几个问题：
-
-bar的背景设置
-bar上的图标如何设置，颜色用什么控制
-indicator如何设置">
+<meta name="twitter:title" content="android存储方案，兼容6.0以上">
+<meta name="twitter:description" content="android的存储本来没啥好说的。但在6.0上由于有了权限申请这个环节，以前随意在SD卡上建目录的方式，要注意才行了。
+android api提供给应用存储的路径就有两个，6.0以上应该尽量使用它们。这两个目录是不需要申请权限的，甚至在xml中都不需要配置。只是为了兼容之前的版本，我们仍然需要写上
+&amp;lt;uses-permission android:name=&amp;quot;android.pe">
 
 
 
@@ -129,9 +120,9 @@ indicator如何设置">
 
 
 
-  <link rel="canonical" href="http://lonaever.me/2015/12/30/UITabBar配置/"/>
+  <link rel="canonical" href="http://lonaever.me/2016/08/18/android存储方案，兼容6-0以上/"/>
 
-  <title> ios UITabBar配置 | lonaever的记忆 </title>
+  <title> android存储方案，兼容6.0以上 | lonaever的记忆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +262,7 @@ indicator如何设置">
             
             
               
-                ios UITabBar配置
+                android存储方案，兼容6.0以上
               
             
           </h1>
@@ -283,8 +274,8 @@ indicator如何设置">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-30T22:35:58+08:00" content="2015-12-30">
-              2015-12-30
+            <time itemprop="dateCreated" datetime="2016-08-18T17:22:40+08:00" content="2016-08-18">
+              2016-08-18
             </time>
           </span>
 
@@ -297,8 +288,8 @@ indicator如何设置">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
                   </a>
                 </span>
 
@@ -313,8 +304,8 @@ indicator如何设置">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/30/UITabBar配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/UITabBar配置/" itemprop="commentsCount"></span>
+                <a href="/2016/08/18/android存储方案，兼容6-0以上/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/18/android存储方案，兼容6-0以上/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -337,33 +328,63 @@ indicator如何设置">
       
 
       
-        <p>很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。</p>
-<p>其实主要包含如下几个问题：</p>
+        <p>android的存储本来没啥好说的。但在6.0上由于有了权限申请这个环节，以前随意在SD卡上建目录的方式，要注意才行了。</p>
+<p>android api提供给应用存储的路径就有两个，6.0以上应该尽量使用它们。这两个目录是不需要申请权限的，甚至在xml中都不需要配置。只是为了兼容之前的版本，我们仍然需要写上</p>
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
+</code></pre><a id="more"></a>
 <ol>
-<li>bar的背景设置</li>
-<li>bar上的图标如何设置，颜色用什么控制</li>
-<li>indicator如何设置</li>
+<li><p>私有目录，沙盒。非root过的手机，是看不见里面内容的。</p>
+<pre><code>public static String getAppFilesPath() {
+    return appContext.getFilesDir().getAbsolutePath();
+}
+
+public static String getAppCachePath() {
+    return appContext.getCacheDir().getAbsolutePath();
+}
+</code></pre><p>这个目录是肯定会存在的，通过Context直接获取。使用手机内部存储，不能放太大的东西。另外需要注意，这里的文件是只有自身应用能够读取的。比如一个pdf，想要调用wps打开，传这里的路径是不行的。一些分享sdk，也要求在分享图片时候，不能将图片放在私有目录下。</p>
+</li>
+<li><p>应用外部存储的目录</p>
+<pre><code>public static boolean isAppExtOk() {
+    if (isCanUseSD()) {
+        return true;
+    }
+    return false;
+}
+
+public static String getAppExtFilesPath() {
+    String path = appContext.getExternalFilesDir(null).getAbsolutePath();
+    if (path != null) {
+        //确保该路径是存在的
+        //6.0以上是肯定会存在的。之前可能该路径未创建,需要手动创建
+        makeDirs(path);
+    }
+    return path;
+}
+
+public static String getAppExtCachePath() {
+    String path = appContext.getExternalCacheDir().getAbsolutePath();
+    if (path != null) {
+        makeDirs(path);
+    }
+    return path;
+}
+</code></pre><p> 外部存储目录，其实现在的手机绝对是有的，不然还生产来干嘛。但是保险的话，仍然是增加了一句判断。这里的文件存储在SD卡上，都可以访问。</p>
+</li>
+<li><p>SD自定义的存储目录</p>
+<pre><code>public static String getExtRootPath() {
+    if (ContextCompat.checkSelfPermission(appContext, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+    if (rootPath == null) {
+            rootPath = Environment.getExternalStorageDirectory().getAbsolutePath() + &quot;/&quot; + rootFolder;
+            makeDirs(rootPath);
+        }
+    }
+    return rootPath;
+}
+</code></pre><p> 这里的重点就是需要提前申请读写权限，然后才能使用。一般情况下，其实没有必要再去维护这样一个目录。直接使用AppExt的路径不是挺好的嘛，还不需要去申请权限。</p>
+</li>
 </ol>
-<a id="more"></a>
-<p>ios7以上的配置需要注意，Tabbar上的图标的颜色，默认情况下未选中是灰色，选中后是global tint中指定的颜色。（默认是蓝色）。无论你的icon的图片本身什么颜色，都会被系统直接改掉。</p>
-<h3 id="使用图标本身颜色"><a href="#使用图标本身颜色" class="headerlink" title="使用图标本身颜色"></a>使用图标本身颜色</h3><pre><code>setSelectedImage:[[UIImage imageNamed:@&quot;xx&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-</code></pre><p><code>UIImageRenderingModeAlwaysOriginal</code>这个参数就表明了，使用原图。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面是配置TabBar的全局方法：</p>
-<pre><code>//设置选中后图标的颜色
-[[UITabBar appearance] setTintColor:[UIColor colorWithHexString:global_tint]];
-//背景色
-[[UITabBar appearance] setBarTintColor:[UIColor colorWithHexString:global_tint]];
-//设置选中后，图片提示
-[[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageWithColor:[UIColor colorWithHexString:global_text] size:CGSizeMake(self.window.frame.size.width/5, 49)]];
-//设置字体
-[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:global_text]} forState:UIControlStateNormal];
-[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithHexString:global_tint]} forState:UIControlStateSelected];
-</code></pre><p>如果需要在代码中，实现图标的选中和未选中有两个方法去实现：</p>
-<pre><code>这个方式只在ios7以上有用
-在相应的controller中调用。
-[self.tabBarItem setSelectedImage:[[UIImage imageNamed:@&quot;yx_ico1.png&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-[self.tabBarItem setImage:[[UIImage imageNamed:@&quot;yx_ico.png&quot;] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-</code></pre><p>或者在tabcontroller的子类中，找到tabItems，分别进行设置。</p>
+<p>相关的方法，封装成了一个简单的FileUtils。所有代码都可以在<a href="https://github.com/lonaever/MyApp" target="_blank" rel="external">https://github.com/lonaever/MyApp</a>找到。</p>
 
       
     </div>
@@ -384,27 +405,21 @@ indicator如何设置">
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/备忘/" rel="tag">#备忘</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/24/octopress配置/" rel="next" title="Octopress+Github配置个人博客">
-                <i class="fa fa-chevron-left"></i> Octopress+Github配置个人博客
+              <a href="/2016/08/18/ViewPager数据变化是需要立即刷新的/" rel="next" title="ViewPager数据变化是需要立即刷新的">
+                <i class="fa fa-chevron-left"></i> ViewPager数据变化是需要立即刷新的
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/17/常用android样式收集/" rel="prev" title="常用android样式收集">
-                常用android样式收集 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/18/android封装框架，LibMyApp2-0/" rel="prev" title="android封装框架，LibMyApp2.0">
+                android封装框架，LibMyApp2.0 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -431,8 +446,8 @@ indicator如何设置">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/30/UITabBar配置/"
-           data-title="ios UITabBar配置" data-url="http://lonaever.me/2015/12/30/UITabBar配置/">
+      <div class="ds-thread" data-thread-key="2016/08/18/android存储方案，兼容6-0以上/"
+           data-title="android存储方案，兼容6.0以上" data-url="http://lonaever.me/2016/08/18/android存储方案，兼容6-0以上/">
       </div>
     
   </div>
@@ -523,7 +538,7 @@ indicator如何设置">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用图标本身颜色"><span class="nav-number">1.</span> <span class="nav-text">使用图标本身颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

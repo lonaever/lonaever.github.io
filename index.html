@@ -258,6 +258,314 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/24/使用cocoapods/" itemprop="url">
+                  使用cocoapods
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-24T17:08:03+08:00" content="2016-08-24">
+              2016-08-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ios/" itemprop="url" rel="index">
+                    <span itemprop="name">ios</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/24/使用cocoapods/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/使用cocoapods/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。</p>
+<h3 id="升级ruby"><a href="#升级ruby" class="headerlink" title="升级ruby"></a>升级ruby</h3><h5 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h5><p>执行<code>sudo gem install cocoapods</code> 后提示</p>
+<blockquote>
+<p>ERROR:  Error installing cocoapods:<br>    activesupport requires Ruby version &gt;= 2.2.2.</p>
+</blockquote>
+<h5 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h5><ol>
+<li><p>安装rvm（ruby的管理器），用它来安装新版本的ruby。</p>
+<pre><code>curl -L get.rvm.io | bash -s stable
+</code></pre><p> 安装完成后提示：</p>
+<pre><code>* WARNING: You have &apos;~/.profile&apos; file, you might want to load it,
+to do that add the following line to &apos;/Users/minyu/.bash_profile&apos;:
+
+  source ~/.profile
+</code></pre><p> 就是需要在.bash_profile文件中增加一行。</p>
+</li>
+<li><p>这时候可以查看ruby的版本，和可以安装的版本。</p>
+<pre><code>rvm -v
+rvm 1.27.0 (latest) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis     &lt;mpapis@gmail.com&gt; [https://rvm.io/]
+rvm list known
+</code></pre></li>
+<li><p>安装2.3</p>
+<pre><code>rvm install 2.3
+</code></pre><p> 这时候，会自动先安装homebrew，真是麻烦。</p>
+<pre><code>About to install Homebrew, press `Enter` for default installation in `/usr/local`,
+type new path if you wish custom Homebrew installation (the path needs to be writable for user)
+</code></pre><p> （安装过程真的很慢！还要complie ruby2.3）</p>
+</li>
+</ol>
+<h3 id="升级gem"><a href="#升级gem" class="headerlink" title="升级gem"></a>升级gem</h3><h5 id="更改ruby的源"><a href="#更改ruby的源" class="headerlink" title="更改ruby的源"></a>更改ruby的源</h5><p>为了不翻墙，为了速度。照做吧！</p>
+<pre><code>gem sources --remove https://rubygems.org/
+gem sources -a https://ruby.taobao.org/
+gem sources -l
+</code></pre><p>然后再执行</p>
+<pre><code>sudo gem update --system
+gem -v
+</code></pre><h3 id="安装cocoapods"><a href="#安装cocoapods" class="headerlink" title="安装cocoapods"></a>安装cocoapods</h3><p>现在一切就绪，安装</p>
+<pre><code>sudo gem install cocoapods
+</code></pre><h5 id="替换pod源"><a href="#替换pod源" class="headerlink" title="替换pod源"></a>替换pod源</h5><pre><code>pod repo remove master
+pod repo add master https://gitcafe.com/akuandev/Specs.git
+pod repo update
+</code></pre><h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><ol>
+<li><p>创建Podfile</p>
+<pre><code>pod init
+</code></pre><p> 使用命令创建，然后再修改比较好。现在的版本是要求一定要有target的。</p>
+</li>
+<li><p>执行<code>pod install</code>,<code>pod update</code></p>
+</li>
+</ol>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
+<li><a href="http://blog.devtang.com/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/" target="_blank" rel="external">用CocoaPods做iOS程序的依赖管理</a></li>
+<li><a href="https://cocoapods.org/" target="_blank" rel="external">https://cocoapods.org/</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/22/android拍照问题（i9300）/" itemprop="url">
+                  android拍照问题（i9300）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-22T11:15:31+08:00" content="2016-08-22">
+              2016-08-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/22/android拍照问题（i9300）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/22/android拍照问题（i9300）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>android上的拍照及自定义相册，现在直接使用三方库处理就好，没那么多问题。如：<a href="https://github.com/pengjianbo/GalleryFinal" target="_blank" rel="external">https://github.com/pengjianbo/GalleryFinal</a> 功能很强大。大多数应用场景这个库都能满足了，自己只需要去实现图片压缩，然后上传就行。</p>
+<p>过去就麻烦了，问题很多，特别是在三星i9300上简直就是扯淡，至今记忆犹新。</p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li><p>i9300上activity销毁问题</p>
+<blockquote>
+<p>i9300上调用相机后，调用的Activity会立即被destory  </p>
+</blockquote>
+<p>  解决办法：  </p>
+<ol>
+<li><p>首先xml上增加一句</p>
+<pre><code>android:configChanges=&quot;keyboardHidden|orientation|screensize&quot;
+</code></pre><p> 否则拍照结果无法获取。</p>
+</li>
+<li><p>通过重写Activity的 onSaveInstanceState() 和 onRestoreInstanceState()方法。将需要记录的数据手动保存下来，在重新创建的时候，进行恢复。</p>
+</li>
+</ol>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/19/android-studio中gradle使用须知/" itemprop="url">
                   android studio中gradle使用须知
                 </a>
@@ -1187,246 +1495,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/30/UITabBar配置/" itemprop="url">
-                  ios UITabBar配置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-30T22:35:58+08:00" content="2015-12-30">
-              2015-12-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/30/UITabBar配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/UITabBar配置/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>很长时间没有使用UITabBarController作为app的UI结构了，一弄竟然各种问题费解。</p>
-<p>其实主要包含如下几个问题：</p>
-<ol>
-<li>bar的背景设置</li>
-<li>bar上的图标如何设置，颜色用什么控制</li>
-<li>indicator如何设置</li>
-</ol>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/30/UITabBar配置/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/24/octopress配置/" itemprop="url">
-                  Octopress+Github配置个人博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-24T18:07:40+08:00" content="2015-12-24">
-              2015-12-24
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/24/octopress配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/24/octopress配置/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><em>octopress 已不再维护，换hexo吧</em></p>
-<p>折腾了半天终于是跑起来了。坑还是多啊，趁热赶紧记下来，就刚好作为第一篇日志了。<br>我是按照这两篇文章开始配置的，但是中途却依然遇到好多错误。</p>
-<ul>
-<li><a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/">http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/</a></li>
-<li><a href="http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/">http://blog.leichunfeng.com/blog/2014/11/11/use-octopress-plus-github-pages-to-setup-a-personal-blog/</a></li>
-</ul>
-<p>我的安装环境：Mac OSX EI Capitan 10.11</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/24/octopress配置/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1465,7 +1540,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

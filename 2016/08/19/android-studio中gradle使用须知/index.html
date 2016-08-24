@@ -96,7 +96,7 @@ Gradle是个牛逼的构建工具，更多的东西了解下就够了，反正�
 Gradle在哪儿呢">
 <meta property="og:image" content="http://oc4vr1d5q.bkt.clouddn.com/E6778937-CA2B-40E4-8A29-B8FE728E1574.png">
 <meta property="og:image" content="http://oc4vr1d5q.bkt.clouddn.com/8BA2B35B-F8C0-48CF-8D64-9BAD571D9868.png">
-<meta property="og:updated_time" content="2016-08-19T08:33:53.000Z">
+<meta property="og:updated_time" content="2016-08-19T09:27:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android studio中gradle使用须知">
 <meta name="twitter:description" content="Gradle是个好东西啊，只是Android Studio都用了好长时间了，才慢慢搞清楚是这么回事。
@@ -378,6 +378,15 @@ Gradle在哪儿呢">
 </li>
 </ul>
 <p>关于生成多渠道包，美团的blog中分享的非常详细。<a href="http://tech.meituan.com/mt-apk-adaptation.html" target="_blank" rel="external">http://tech.meituan.com/mt-apk-adaptation.html</a></p>
+<ul>
+<li><p>加入so文件</p>
+<pre><code>sourceSets {  
+main {  
+    jniLibs.srcDirs = [&apos;libs&apos;]  
+}  
+}  
+</code></pre></li>
+</ul>
 
       
     </div>
@@ -410,6 +419,10 @@ Gradle在哪儿呢">
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/22/android拍照问题（i9300）/" rel="prev" title="android拍照问题（i9300）">
+                android拍照问题（i9300） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -481,7 +494,7 @@ Gradle在哪儿呢">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

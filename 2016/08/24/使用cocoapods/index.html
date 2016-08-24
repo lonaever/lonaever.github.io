@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="备忘," />
+  <meta name="keywords" content="lonaever, ios, android" />
 
 
 
@@ -84,16 +84,34 @@
 
 
 
-<meta name="description" content="至今2016年，android studio稳定版已经更新至2.10了，直接安装使用出现莫名其妙问题的几率已经很少了。不过仍有一些问题和技巧，方便记录在此。">
+<meta name="description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
+升级ruby问题描述：执行sudo gem install cocoapods 后提示
+
+ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;gt;= 2.2.2.
+
+解决办法
+安装rvm（ruby的管理器），用它">
 <meta property="og:type" content="article">
-<meta property="og:title" content="android studio的使用（常见问题）">
-<meta property="og:url" content="http://lonaever.me/2016/08/19/android-studio的使用（常见问题）/index.html">
+<meta property="og:title" content="使用cocoapods">
+<meta property="og:url" content="http://lonaever.me/2016/08/24/使用cocoapods/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="至今2016年，android studio稳定版已经更新至2.10了，直接安装使用出现莫名其妙问题的几率已经很少了。不过仍有一些问题和技巧，方便记录在此。">
-<meta property="og:updated_time" content="2016-08-19T03:39:47.000Z">
+<meta property="og:description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
+升级ruby问题描述：执行sudo gem install cocoapods 后提示
+
+ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;gt;= 2.2.2.
+
+解决办法
+安装rvm（ruby的管理器），用它">
+<meta property="og:updated_time" content="2016-08-24T09:33:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="android studio的使用（常见问题）">
-<meta name="twitter:description" content="至今2016年，android studio稳定版已经更新至2.10了，直接安装使用出现莫名其妙问题的几率已经很少了。不过仍有一些问题和技巧，方便记录在此。">
+<meta name="twitter:title" content="使用cocoapods">
+<meta name="twitter:description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
+升级ruby问题描述：执行sudo gem install cocoapods 后提示
+
+ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;gt;= 2.2.2.
+
+解决办法
+安装rvm（ruby的管理器），用它">
 
 
 
@@ -114,9 +132,9 @@
 
 
 
-  <link rel="canonical" href="http://lonaever.me/2016/08/19/android-studio的使用（常见问题）/"/>
+  <link rel="canonical" href="http://lonaever.me/2016/08/24/使用cocoapods/"/>
 
-  <title> android studio的使用（常见问题） | lonaever的记忆 </title>
+  <title> 使用cocoapods | lonaever的记忆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +274,7 @@
             
             
               
-                android studio的使用（常见问题）
+                使用cocoapods
               
             
           </h1>
@@ -268,8 +286,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-19T11:26:26+08:00" content="2016-08-19">
-              2016-08-19
+            <time itemprop="dateCreated" datetime="2016-08-24T17:08:03+08:00" content="2016-08-24">
+              2016-08-24
             </time>
           </span>
 
@@ -282,8 +300,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/ios/" itemprop="url" rel="index">
+                    <span itemprop="name">ios</span>
                   </a>
                 </span>
 
@@ -298,8 +316,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/19/android-studio的使用（常见问题）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/19/android-studio的使用（常见问题）/" itemprop="commentsCount"></span>
+                <a href="/2016/08/24/使用cocoapods/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/使用cocoapods/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -322,15 +340,58 @@
       
 
       
-        <p>至今2016年，android studio稳定版已经更新至2.10了，直接安装使用出现莫名其妙问题的几率已经很少了。不过仍有一些问题和技巧，方便记录在此。</p>
-<a id="more"></a>
-<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><h5 id="启动后卡Fetching-android-sdk-component-information"><a href="#启动后卡Fetching-android-sdk-component-information" class="headerlink" title="启动后卡Fetching android sdk component information"></a>启动后卡<em>Fetching android sdk component information</em></h5><p>这个问题出现在老版本中，没有集成android sdk的情况下。然后国内不翻墙又半天下载不了sdk，就一直卡在启动界面。<br>解决方案很简单：</p>
+        <p>重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。</p>
+<h3 id="升级ruby"><a href="#升级ruby" class="headerlink" title="升级ruby"></a>升级ruby</h3><h5 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h5><p>执行<code>sudo gem install cocoapods</code> 后提示</p>
 <blockquote>
-<p>Android Studio包下bin目录，idea.properties增加一行disable.android.first.run=true。重启后，手动去指定sdk路径就行了。</p>
+<p>ERROR:  Error installing cocoapods:<br>    activesupport requires Ruby version &gt;= 2.2.2.</p>
 </blockquote>
-<h5 id="xml预览出不来"><a href="#xml预览出不来" class="headerlink" title="xml预览出不来"></a>xml预览出不来</h5><p>style上，加一个Base就行了。</p>
-<pre><code>&lt;style name=&quot;AppTheme&quot; parent=&quot;Base.Theme.AppCompat.Light.DarkActionBar&quot;&gt;
-</code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h5 id="使用eclipse的快捷键"><a href="#使用eclipse的快捷键" class="headerlink" title="使用eclipse的快捷键"></a>使用eclipse的快捷键</h5><p>用惯了eclipse的快捷键风格，想改都难。直接配置keymap。</p>
+<h5 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h5><ol>
+<li><p>安装rvm（ruby的管理器），用它来安装新版本的ruby。</p>
+<pre><code>curl -L get.rvm.io | bash -s stable
+</code></pre><p> 安装完成后提示：</p>
+<pre><code>* WARNING: You have &apos;~/.profile&apos; file, you might want to load it,
+to do that add the following line to &apos;/Users/minyu/.bash_profile&apos;:
+
+  source ~/.profile
+</code></pre><p> 就是需要在.bash_profile文件中增加一行。</p>
+</li>
+<li><p>这时候可以查看ruby的版本，和可以安装的版本。</p>
+<pre><code>rvm -v
+rvm 1.27.0 (latest) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis     &lt;mpapis@gmail.com&gt; [https://rvm.io/]
+rvm list known
+</code></pre></li>
+<li><p>安装2.3</p>
+<pre><code>rvm install 2.3
+</code></pre><p> 这时候，会自动先安装homebrew，真是麻烦。</p>
+<pre><code>About to install Homebrew, press `Enter` for default installation in `/usr/local`,
+type new path if you wish custom Homebrew installation (the path needs to be writable for user)
+</code></pre><p> （安装过程真的很慢！还要complie ruby2.3）</p>
+</li>
+</ol>
+<h3 id="升级gem"><a href="#升级gem" class="headerlink" title="升级gem"></a>升级gem</h3><h5 id="更改ruby的源"><a href="#更改ruby的源" class="headerlink" title="更改ruby的源"></a>更改ruby的源</h5><p>为了不翻墙，为了速度。照做吧！</p>
+<pre><code>gem sources --remove https://rubygems.org/
+gem sources -a https://ruby.taobao.org/
+gem sources -l
+</code></pre><p>然后再执行</p>
+<pre><code>sudo gem update --system
+gem -v
+</code></pre><h3 id="安装cocoapods"><a href="#安装cocoapods" class="headerlink" title="安装cocoapods"></a>安装cocoapods</h3><p>现在一切就绪，安装</p>
+<pre><code>sudo gem install cocoapods
+</code></pre><h5 id="替换pod源"><a href="#替换pod源" class="headerlink" title="替换pod源"></a>替换pod源</h5><pre><code>pod repo remove master
+pod repo add master https://gitcafe.com/akuandev/Specs.git
+pod repo update
+</code></pre><h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><ol>
+<li><p>创建Podfile</p>
+<pre><code>pod init
+</code></pre><p> 使用命令创建，然后再修改比较好。现在的版本是要求一定要有target的。</p>
+</li>
+<li><p>执行<code>pod install</code>,<code>pod update</code></p>
+</li>
+</ol>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
+<li><a href="http://blog.devtang.com/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/" target="_blank" rel="external">用CocoaPods做iOS程序的依赖管理</a></li>
+<li><a href="https://cocoapods.org/" target="_blank" rel="external">https://cocoapods.org/</a></li>
+</ul>
 
       
     </div>
@@ -351,28 +412,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/备忘/" rel="tag">#备忘</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/18/技术点除了收藏、整理，还需要总结/" rel="next" title="整理好碎片化的知识点">
-                <i class="fa fa-chevron-left"></i> 整理好碎片化的知识点
+              <a href="/2016/08/22/android拍照问题（i9300）/" rel="next" title="android拍照问题（i9300）">
+                <i class="fa fa-chevron-left"></i> android拍照问题（i9300）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/19/android-studio中gradle使用须知/" rel="prev" title="android studio中gradle使用须知">
-                android studio中gradle使用须知 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -398,8 +449,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/19/android-studio的使用（常见问题）/"
-           data-title="android studio的使用（常见问题）" data-url="http://lonaever.me/2016/08/19/android-studio的使用（常见问题）/">
+      <div class="ds-thread" data-thread-key="2016/08/24/使用cocoapods/"
+           data-title="使用cocoapods" data-url="http://lonaever.me/2016/08/24/使用cocoapods/">
       </div>
     
   </div>
@@ -490,7 +541,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">1.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#启动后卡Fetching-android-sdk-component-information"><span class="nav-number">1.0.1.</span> <span class="nav-text">启动后卡Fetching android sdk component information</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#xml预览出不来"><span class="nav-number">1.0.2.</span> <span class="nav-text">xml预览出不来</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用eclipse的快捷键"><span class="nav-number">2.0.1.</span> <span class="nav-text">使用eclipse的快捷键</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#升级ruby"><span class="nav-number">1.</span> <span class="nav-text">升级ruby</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述："><span class="nav-number">1.0.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决办法"><span class="nav-number">1.0.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级gem"><span class="nav-number">2.</span> <span class="nav-text">升级gem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#更改ruby的源"><span class="nav-number">2.0.1.</span> <span class="nav-text">更改ruby的源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装cocoapods"><span class="nav-number">3.</span> <span class="nav-text">安装cocoapods</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换pod源"><span class="nav-number">3.0.1.</span> <span class="nav-text">替换pod源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单使用"><span class="nav-number">4.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a></li></ol></div>
             
           </div>
         </section>

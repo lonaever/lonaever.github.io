@@ -102,7 +102,7 @@ ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;
 
 解决办法
 安装rvm（ruby的管理器），用它">
-<meta property="og:updated_time" content="2016-08-24T09:33:08.000Z">
+<meta property="og:updated_time" content="2016-08-26T01:44:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用cocoapods">
 <meta name="twitter:description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
@@ -377,20 +377,56 @@ gem sources -l
 gem -v
 </code></pre><h3 id="安装cocoapods"><a href="#安装cocoapods" class="headerlink" title="安装cocoapods"></a>安装cocoapods</h3><p>现在一切就绪，安装</p>
 <pre><code>sudo gem install cocoapods
+</code></pre><h5 id="初始化索引"><a href="#初始化索引" class="headerlink" title="初始化索引"></a>初始化索引</h5><p>这个步骤实在太慢，据说大概有400M的东西需要下载。而我的情况就是无休止的出现：</p>
+<pre><code>pod setup
+
+[!] /usr/bin/git clone https://github.com/CocoaPods/Specs.git master
+
+Cloning into &apos;master&apos;...
+error: RPC failed; curl 56 SSLRead() return error -9806
+fatal: The remote end hung up unexpectedly
+fatal: early EOF
+fatal: index-pack failed
+</code></pre><p>通过终端可以查看进度：</p>
+<pre><code>cd ~/.cocoapods/
+du -sh *
 </code></pre><h5 id="替换pod源"><a href="#替换pod源" class="headerlink" title="替换pod源"></a>替换pod源</h5><pre><code>pod repo remove master
-pod repo add master https://gitcafe.com/akuandev/Specs.git
+pod repo add master 镜像源地址
 pod repo update
+pod setup
 </code></pre><h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><ol>
 <li><p>创建Podfile</p>
 <pre><code>pod init
-</code></pre><p> 使用命令创建，然后再修改比较好。现在的版本是要求一定要有target的。</p>
-</li>
-<li><p>执行<code>pod install</code>,<code>pod update</code></p>
+</code></pre><p> 使用命令创建，然后再修改比较好。现在的版本是要求一定要有target的。如：</p>
+<pre><code># Uncomment this line to define a global platform for your project
+platform :ios, &apos;8.0&apos;
+
+target &apos;TestHealthKit&apos; do
+  # Uncomment this line if you&apos;re using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for TestHealthKit
+  pod &apos;YYKit&apos;, &apos;~&gt; 1.0.7&apos;
+
+  target &apos;TestHealthKitTests&apos; do
+inherit! :search_paths
+# Pods for testing
+  end
+
+  target &apos;TestHealthKitUITests&apos; do
+inherit! :search_paths
+# Pods for testing
+  end
+
+end
+</code></pre></li>
+<li><p>执行<code>pod install</code>,<code>pod update</code>，进行第一次安装依赖和升级。带上参数 <code>--no-repo-update</code>可以避免去更新索引库。</p>
 </li>
 </ol>
 <h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
 <li><a href="http://blog.devtang.com/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/" target="_blank" rel="external">用CocoaPods做iOS程序的依赖管理</a></li>
 <li><a href="https://cocoapods.org/" target="_blank" rel="external">https://cocoapods.org/</a></li>
+<li><a href="http://www.jianshu.com/p/32d9cfb91471" target="_blank" rel="external">http://www.jianshu.com/p/32d9cfb91471</a></li>
 </ul>
 
       
@@ -541,7 +577,7 @@ pod repo update
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#升级ruby"><span class="nav-number">1.</span> <span class="nav-text">升级ruby</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述："><span class="nav-number">1.0.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决办法"><span class="nav-number">1.0.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级gem"><span class="nav-number">2.</span> <span class="nav-text">升级gem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#更改ruby的源"><span class="nav-number">2.0.1.</span> <span class="nav-text">更改ruby的源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装cocoapods"><span class="nav-number">3.</span> <span class="nav-text">安装cocoapods</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换pod源"><span class="nav-number">3.0.1.</span> <span class="nav-text">替换pod源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单使用"><span class="nav-number">4.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#升级ruby"><span class="nav-number">1.</span> <span class="nav-text">升级ruby</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述："><span class="nav-number">1.0.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决办法"><span class="nav-number">1.0.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级gem"><span class="nav-number">2.</span> <span class="nav-text">升级gem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#更改ruby的源"><span class="nav-number">2.0.1.</span> <span class="nav-text">更改ruby的源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装cocoapods"><span class="nav-number">3.</span> <span class="nav-text">安装cocoapods</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化索引"><span class="nav-number">3.0.1.</span> <span class="nav-text">初始化索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换pod源"><span class="nav-number">3.0.2.</span> <span class="nav-text">替换pod源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单使用"><span class="nav-number">4.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a></li></ol></div>
             
           </div>
         </section>

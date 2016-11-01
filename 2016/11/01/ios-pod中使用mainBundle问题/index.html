@@ -84,15 +84,28 @@
 
 
 
-<meta name="description" content="lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lonaever的记忆">
-<meta property="og:url" content="http://lonaever.me/archives/2016/08/index.html">
+<meta name="description" content="在pod中的资源，如果仍然是使用[NSBundle mainBundle]来获取，返回将是nil，这个在pod1.x之后貌似是这样的。以前的项目没有出错。
+通常这样的问题，就是在一些已经很久没有维护过的项目中出现。
+解决办法：打开MJ或者QB的源码就看见人家是怎么读取的了。比如：
+// Get asset bundle
+self.assetBundle = [NSBundle bundleForC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios pod中使用mainBundle问题">
+<meta property="og:url" content="http://lonaever.me/2016/11/01/ios-pod中使用mainBundle问题/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的">
+<meta property="og:description" content="在pod中的资源，如果仍然是使用[NSBundle mainBundle]来获取，返回将是nil，这个在pod1.x之后貌似是这样的。以前的项目没有出错。
+通常这样的问题，就是在一些已经很久没有维护过的项目中出现。
+解决办法：打开MJ或者QB的源码就看见人家是怎么读取的了。比如：
+// Get asset bundle
+self.assetBundle = [NSBundle bundleForC">
+<meta property="og:updated_time" content="2016-11-01T05:36:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lonaever的记忆">
-<meta name="twitter:description" content="lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的">
+<meta name="twitter:title" content="ios pod中使用mainBundle问题">
+<meta name="twitter:description" content="在pod中的资源，如果仍然是使用[NSBundle mainBundle]来获取，返回将是nil，这个在pod1.x之后貌似是这样的。以前的项目没有出错。
+通常这样的问题，就是在一些已经很久没有维护过的项目中出现。
+解决办法：打开MJ或者QB的源码就看见人家是怎么读取的了。比如：
+// Get asset bundle
+self.assetBundle = [NSBundle bundleForC">
 
 
 
@@ -113,9 +126,9 @@
 
 
 
-  <link rel="canonical" href="http://lonaever.me/archives/2016/08/"/>
+  <link rel="canonical" href="http://lonaever.me/2016/11/01/ios-pod中使用mainBundle问题/"/>
 
-  <title> 归档 | lonaever的记忆 </title>
+  <title> ios pod中使用mainBundle问题 | lonaever的记忆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +149,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,399 +247,131 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 14 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/24/使用cocoapods/" itemprop="url">
-              
-                <span itemprop="name">使用cocoapods</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-24T17:08:03+08:00"
-              content="2016-08-24" >
-          08-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/22/android拍照问题（i9300）/" itemprop="url">
-              
-                <span itemprop="name">android拍照问题（i9300）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-22T11:15:31+08:00"
-              content="2016-08-22" >
-          08-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/19/android-studio中gradle使用须知/" itemprop="url">
-              
-                <span itemprop="name">android studio中gradle使用须知</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-19T14:54:49+08:00"
-              content="2016-08-19" >
-          08-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/19/android-studio的使用（常见问题）/" itemprop="url">
-              
-                <span itemprop="name">android studio的使用（常见问题）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-19T11:26:26+08:00"
-              content="2016-08-19" >
-          08-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/18/技术点除了收藏、整理，还需要总结/" itemprop="url">
-              
-                <span itemprop="name">整理好碎片化的知识点</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-18T17:26:17+08:00"
-              content="2016-08-18" >
-          08-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/18/android封装框架，LibMyApp2-0/" itemprop="url">
-              
-                <span itemprop="name">android封装框架，LibMyApp2.0</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-18T17:23:25+08:00"
-              content="2016-08-18" >
-          08-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/18/android存储方案，兼容6-0以上/" itemprop="url">
-              
-                <span itemprop="name">android存储方案，兼容6.0以上</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-18T17:22:40+08:00"
-              content="2016-08-18" >
-          08-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/18/ViewPager数据变化是需要立即刷新的/" itemprop="url">
-              
-                <span itemprop="name">ViewPager数据变化是需要立即刷新的</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-18T17:21:29+08:00"
-              content="2016-08-18" >
-          08-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/17/hexo很方便，很美妙/" itemprop="url">
-              
-                <span itemprop="name">hexo很方便，很美妙</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-17T17:09:10+08:00"
-              content="2016-08-17" >
-          08-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/17/常用android样式收集/" itemprop="url">
-              
-                <span itemprop="name">常用android样式收集</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-17T10:09:10+08:00"
-              content="2016-08-17" >
-          08-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ios pod中使用mainBundle问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T13:31:07+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/01/ios-pod中使用mainBundle问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/01/ios-pod中使用mainBundle问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在pod中的资源，如果仍然是使用[NSBundle mainBundle]来获取，返回将是nil，这个在pod1.x之后貌似是这样的。以前的项目没有出错。</p>
+<p>通常这样的问题，就是在一些已经很久没有维护过的项目中出现。</p>
+<p>解决办法：打开MJ或者QB的源码就看见人家是怎么读取的了。比如：</p>
+<pre><code>// Get asset bundle
+self.assetBundle = [NSBundle bundleForClass:[self class]];
+NSString *bundlePath = [self.assetBundle pathForResource:@&quot;QBImagePicker&quot; ofType:@&quot;bundle&quot;];
+if (bundlePath) {
+    self.assetBundle = [NSBundle bundleWithPath:bundlePath];
+}
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/05/RecyclerView-学习记录/" rel="next" title="RecyclerView 学习记录">
+                <i class="fa fa-chevron-left"></i> RecyclerView 学习记录
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -634,6 +379,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/01/ios-pod中使用mainBundle问题/"
+           data-title="ios pod中使用mainBundle问题" data-url="http://lonaever.me/2016/11/01/ios-pod中使用mainBundle问题/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -653,8 +406,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -704,6 +466,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -807,11 +580,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

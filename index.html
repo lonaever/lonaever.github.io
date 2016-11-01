@@ -308,18 +308,14 @@
 
       
         
-          
-            <p>在pod中的资源，如果仍然是使用[NSBundle mainBundle]来获取，返回将是nil，这个在pod1.x之后貌似是这样的。以前的项目没有出错。</p>
+          <p>在pod中的资源读取在0.36前后是有很大区别的，这就是导致使用mainBundle读取不到的原因。0.36以后支持打包framework，这时资源将不会再拷贝到mainBundle里面，因此，如果仍然是使用[NSBundle mainBundle]来获取，返回将是nil。</p>
 <p>通常这样的问题，就是在一些已经很久没有维护过的项目中出现。</p>
 <p>解决办法：打开MJ或者QB的源码就看见人家是怎么读取的了。比如：</p>
-<pre><code>// Get asset bundle
-self.assetBundle = [NSBundle bundleForClass:[self class]];
-NSString *bundlePath = [self.assetBundle pathForResource:@&quot;QBImagePicker&quot; ofType:@&quot;bundle&quot;];
-if (bundlePath) {
-    self.assetBundle = [NSBundle bundleWithPath:bundlePath];
-}
-</code></pre>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/01/ios-pod中使用mainBundle问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

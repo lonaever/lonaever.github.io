@@ -84,34 +84,19 @@
 
 
 
-<meta name="description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
-升级ruby问题描述：执行sudo gem install cocoapods 后提示
-
-ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;gt;= 2.2.2.
-
-解决办法
-安装rvm（ruby的管理器），用它">
+<meta name="description" content="这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。
+问题的描述：wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用cocoapods">
-<meta property="og:url" content="http://lonaever.me/2016/08/24/使用cocoapods/index.html">
+<meta property="og:title" content="ios使用JSContext的大坑">
+<meta property="og:url" content="http://lonaever.me/2016/11/07/ios使用JSContext的大坑/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
-升级ruby问题描述：执行sudo gem install cocoapods 后提示
-
-ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;gt;= 2.2.2.
-
-解决办法
-安装rvm（ruby的管理器），用它">
-<meta property="og:updated_time" content="2016-08-26T01:44:30.000Z">
+<meta property="og:description" content="这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。
+问题的描述：wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。">
+<meta property="og:updated_time" content="2016-11-07T09:23:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用cocoapods">
-<meta name="twitter:description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
-升级ruby问题描述：执行sudo gem install cocoapods 后提示
-
-ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;gt;= 2.2.2.
-
-解决办法
-安装rvm（ruby的管理器），用它">
+<meta name="twitter:title" content="ios使用JSContext的大坑">
+<meta name="twitter:description" content="这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。
+问题的描述：wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。">
 
 
 
@@ -132,9 +117,9 @@ ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;
 
 
 
-  <link rel="canonical" href="http://lonaever.me/2016/08/24/使用cocoapods/"/>
+  <link rel="canonical" href="http://lonaever.me/2016/11/07/ios使用JSContext的大坑/"/>
 
-  <title> 使用cocoapods | lonaever的记忆 </title>
+  <title> ios使用JSContext的大坑 | lonaever的记忆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +259,7 @@ ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;
             
             
               
-                使用cocoapods
+                ios使用JSContext的大坑
               
             
           </h1>
@@ -286,38 +271,19 @@ ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T17:08:03+08:00" content="2016-08-24">
-              2016-08-24
+            <time itemprop="dateCreated" datetime="2016-11-07T17:01:17+08:00" content="2016-11-07">
+              2016-11-07
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/24/使用cocoapods/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/使用cocoapods/" itemprop="commentsCount"></span>
+                <a href="/2016/11/07/ios使用JSContext的大坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/07/ios使用JSContext的大坑/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -340,95 +306,20 @@ ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;
       
 
       
-        <p>重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。</p>
-<h3 id="升级ruby"><a href="#升级ruby" class="headerlink" title="升级ruby"></a>升级ruby</h3><h5 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h5><p>执行<code>sudo gem install cocoapods</code> 后提示</p>
-<blockquote>
-<p>ERROR:  Error installing cocoapods:<br>    activesupport requires Ruby version &gt;= 2.2.2.</p>
-</blockquote>
-<h5 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h5><ol>
-<li><p>安装rvm（ruby的管理器），用它来安装新版本的ruby。</p>
-<pre><code>curl -L get.rvm.io | bash -s stable
-</code></pre><p> 安装完成后提示：</p>
-<pre><code>* WARNING: You have &apos;~/.profile&apos; file, you might want to load it,
-to do that add the following line to &apos;/Users/minyu/.bash_profile&apos;:
-
-  source ~/.profile
-</code></pre><p> 就是需要在.bash_profile文件中增加一行。</p>
-</li>
-<li><p>这时候可以查看ruby的版本，和可以安装的版本。</p>
-<pre><code>rvm -v
-rvm 1.27.0 (latest) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis     &lt;mpapis@gmail.com&gt; [https://rvm.io/]
-rvm list known
-</code></pre></li>
-<li><p>安装2.3</p>
-<pre><code>rvm install 2.3
-</code></pre><p> 这时候，会自动先安装homebrew，真是麻烦。</p>
-<pre><code>About to install Homebrew, press `Enter` for default installation in `/usr/local`,
-type new path if you wish custom Homebrew installation (the path needs to be writable for user)
-</code></pre><p> （安装过程真的很慢！还要complie ruby2.3）</p>
-</li>
-</ol>
-<h3 id="升级gem"><a href="#升级gem" class="headerlink" title="升级gem"></a>升级gem</h3><h5 id="更改ruby的源"><a href="#更改ruby的源" class="headerlink" title="更改ruby的源"></a>更改ruby的源</h5><p>为了不翻墙，为了速度。照做吧！</p>
-<pre><code>gem sources --remove https://rubygems.org/
-gem sources -a https://ruby.taobao.org/
-gem sources -l
-</code></pre><p>然后再执行</p>
-<pre><code>sudo gem update --system
-gem -v
-</code></pre><h3 id="安装cocoapods"><a href="#安装cocoapods" class="headerlink" title="安装cocoapods"></a>安装cocoapods</h3><p>现在一切就绪，安装</p>
-<pre><code>sudo gem install cocoapods
-</code></pre><h5 id="初始化索引"><a href="#初始化索引" class="headerlink" title="初始化索引"></a>初始化索引</h5><p>这个步骤实在太慢，据说大概有400M的东西需要下载。而我的情况就是无休止的出现：</p>
-<pre><code>pod setup
-
-[!] /usr/bin/git clone https://github.com/CocoaPods/Specs.git master
-
-Cloning into &apos;master&apos;...
-error: RPC failed; curl 56 SSLRead() return error -9806
-fatal: The remote end hung up unexpectedly
-fatal: early EOF
-fatal: index-pack failed
-</code></pre><p>通过终端可以查看进度：</p>
-<pre><code>cd ~/.cocoapods/
-du -sh *
-</code></pre><h5 id="替换pod源"><a href="#替换pod源" class="headerlink" title="替换pod源"></a>替换pod源</h5><pre><code>pod repo remove master
-pod repo add master 镜像源地址
-pod repo update
-pod setup
-</code></pre><h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><ol>
-<li><p>创建Podfile</p>
-<pre><code>pod init
-</code></pre><p> 使用命令创建，然后再修改比较好。现在的版本是要求一定要有target的。如：</p>
-<pre><code># Uncomment this line to define a global platform for your project
-platform :ios, &apos;8.0&apos;
-
-target &apos;TestHealthKit&apos; do
-  # Uncomment this line if you&apos;re using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for TestHealthKit
-  pod &apos;YYKit&apos;, &apos;~&gt; 1.0.7&apos;
-
-  target &apos;TestHealthKitTests&apos; do
-inherit! :search_paths
-# Pods for testing
-  end
-
-  target &apos;TestHealthKitUITests&apos; do
-inherit! :search_paths
-# Pods for testing
-  end
-
-end
-</code></pre></li>
-<li><p>执行<code>pod install</code>,<code>pod update</code>，进行第一次安装依赖和升级。带上参数 <code>--no-repo-update</code>可以避免去更新索引库。</p>
-</li>
-</ol>
-<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
-<li><a href="http://blog.devtang.com/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/" target="_blank" rel="external">用CocoaPods做iOS程序的依赖管理</a></li>
-<li><a href="https://cocoapods.org/" target="_blank" rel="external">https://cocoapods.org/</a></li>
-<li><a href="http://www.jianshu.com/p/32d9cfb91471" target="_blank" rel="external">http://www.jianshu.com/p/32d9cfb91471</a></li>
-</ul>
-
+        <p>这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。</p>
+<h3 id="问题的描述："><a href="#问题的描述：" class="headerlink" title="问题的描述："></a>问题的描述：</h3><p>wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。</p>
+<a id="more"></a>
+<p>html中的js代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line">    function test(args) &#123;</div><div class="line">      SOBJ.jsCallBack(args);</div><div class="line">    &#125;;</div><div class="line">	</div><div class="line">	&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>oc中的处理webview的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">- (void)webViewDidFinishLoad:(UIWebView *)webView</div><div class="line">&#123;</div><div class="line">   [self initJavaScriptContext];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)initJavaScriptContext</div><div class="line">&#123;</div><div class="line">    _context = [_theWebView valueForKeyPath:@&quot;documentView.webView.mainFrame.javaScriptContext&quot;];</div><div class="line">    // 设置处理异常的block回调</div><div class="line">    [_context setExceptionHandler:^(JSContext *ctx, JSValue *value) &#123;</div><div class="line">        NSLog(@&quot;js error: %@&quot;, value);</div><div class="line">    &#125;];</div><div class="line">    _context[@&quot;SOBJ&quot;]=self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)jsCallBack:(id)args</div><div class="line">&#123;</div><div class="line">    NSInteger flag=[args integerValue];</div><div class="line">    NSLog(@&quot;js call back flag=%tu&quot;,flag);</div><div class="line">    dispatch_async(dispatch_get_main_queue(), ^&#123;</div><div class="line">        ...code here...</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>oc中JSExport的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@protocol DetailWebProtocol &lt;JSExport&gt;</div><div class="line"></div><div class="line">- (void)jsCallBack:(id)args;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>如果从本地直接加载一个测试html页面，就如上面所示，写个按钮执行js的test方法。oc中的webview都没有问题。但是通过后台返回的html一直跳转过去就会有问题。</p>
+<p>我怀疑是不是这个跳转的写法，有什么蹊跷。</p>
+<p>经过仔细观察webViewDidFinishLoad回调的时候，webView.request.URL的地址，发现了问题。如果从本地加载的页面，这个值一直都是file:///xxxx/app/这样的形式。但是真不确定是否是这个问题导致的jscontext无法注入。</p>
+<p>后来只好放个大招，手动检测如果到了结果界面，通过url地址来判断。如果是结果页面，就手动让webview再load一次。这时候，webViewDidFinishLoad 中的webView.request.URL终于成了url原本的样子。js的回调也就正常了。</p>
+<h2 id="最后就改成了这个样子："><a href="#最后就改成了这个样子：" class="headerlink" title="最后就改成了这个样子："></a>最后就改成了这个样子：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType</div><div class="line">&#123;</div><div class="line">    if ([request.URL.absoluteString rangeOfString:@&quot;结果页面地址&quot;].length&gt;0) &#123;</div><div class="line">        tem_succ_url=request.URL.absoluteString;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)webViewDidFinishLoad:(UIWebView *)webView</div><div class="line">&#123;</div><div class="line">   if ([webView.request.URL.absoluteString rangeOfString:@&quot;结果页面的url地址&quot;].length&gt;0) &#123;</div><div class="line">        [self initJavaScriptContext];</div><div class="line">    &#125;else &#123;</div><div class="line">        if (tem_succ_url) &#123;</div><div class="line">            手动再加载一遍url</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -453,17 +344,13 @@ end
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/22/android拍照问题（i9300）/" rel="next" title="android拍照问题（i9300）">
-                <i class="fa fa-chevron-left"></i> android拍照问题（i9300）
+              <a href="/2016/11/01/ios-pod中使用mainBundle问题/" rel="next" title="ios pod中使用mainBundle问题">
+                <i class="fa fa-chevron-left"></i> ios pod中使用mainBundle问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/05/RecyclerView-学习记录/" rel="prev" title="RecyclerView 学习记录">
-                RecyclerView 学习记录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,8 +376,8 @@ end
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/24/使用cocoapods/"
-           data-title="使用cocoapods" data-url="http://lonaever.me/2016/08/24/使用cocoapods/">
+      <div class="ds-thread" data-thread-key="2016/11/07/ios使用JSContext的大坑/"
+           data-title="ios使用JSContext的大坑" data-url="http://lonaever.me/2016/11/07/ios使用JSContext的大坑/">
       </div>
     
   </div>
@@ -581,7 +468,7 @@ end
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#升级ruby"><span class="nav-number">1.</span> <span class="nav-text">升级ruby</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述："><span class="nav-number">1.0.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决办法"><span class="nav-number">1.0.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级gem"><span class="nav-number">2.</span> <span class="nav-text">升级gem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#更改ruby的源"><span class="nav-number">2.0.1.</span> <span class="nav-text">更改ruby的源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装cocoapods"><span class="nav-number">3.</span> <span class="nav-text">安装cocoapods</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化索引"><span class="nav-number">3.0.1.</span> <span class="nav-text">初始化索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换pod源"><span class="nav-number">3.0.2.</span> <span class="nav-text">替换pod源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单使用"><span class="nav-number">4.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题的描述："><span class="nav-number">1.</span> <span class="nav-text">问题的描述：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后就改成了这个样子："><span class="nav-number"></span> <span class="nav-text">最后就改成了这个样子：</span></a></div>
             
           </div>
         </section>

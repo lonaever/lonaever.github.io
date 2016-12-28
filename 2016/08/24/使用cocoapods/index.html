@@ -84,34 +84,16 @@
 
 
 
-<meta name="description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
-升级ruby问题描述：执行sudo gem install cocoapods 后提示
-
-ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;gt;= 2.2.2.
-
-解决办法
-安装rvm（ruby的管理器），用它">
+<meta name="description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用cocoapods">
 <meta property="og:url" content="http://lonaever.me/2016/08/24/使用cocoapods/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
-升级ruby问题描述：执行sudo gem install cocoapods 后提示
-
-ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;gt;= 2.2.2.
-
-解决办法
-安装rvm（ruby的管理器），用它">
-<meta property="og:updated_time" content="2016-08-26T01:44:30.000Z">
+<meta property="og:description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。">
+<meta property="og:updated_time" content="2016-12-28T02:53:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用cocoapods">
-<meta name="twitter:description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。
-升级ruby问题描述：执行sudo gem install cocoapods 后提示
-
-ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;gt;= 2.2.2.
-
-解决办法
-安装rvm（ruby的管理器），用它">
+<meta name="twitter:description" content="重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。">
 
 
 
@@ -341,6 +323,7 @@ ERROR:  Error installing cocoapods:    activesupport requires Ruby version &amp;
 
       
         <p>重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。</p>
+<a id="more"></a>
 <h3 id="升级ruby"><a href="#升级ruby" class="headerlink" title="升级ruby"></a>升级ruby</h3><h5 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h5><p>执行<code>sudo gem install cocoapods</code> 后提示</p>
 <blockquote>
 <p>ERROR:  Error installing cocoapods:<br>    activesupport requires Ruby version &gt;= 2.2.2.</p>
@@ -428,7 +411,13 @@ end
 <li><a href="https://cocoapods.org/" target="_blank" rel="external">https://cocoapods.org/</a></li>
 <li><a href="http://www.jianshu.com/p/32d9cfb91471" target="_blank" rel="external">http://www.jianshu.com/p/32d9cfb91471</a></li>
 </ul>
-
+<h4 id="持续更新（2016-12-28）"><a href="#持续更新（2016-12-28）" class="headerlink" title="持续更新（2016-12-28）"></a>持续更新（2016-12-28）</h4><p>MacOSX 10.12更新后，升级了xcode8.2.1，pod又出问题了</p>
+<p><code>提示错误Abort trap: 6</code></p>
+<p>并且工程文件也无法创建。这时候需要升级pod后方能使用。</p>
+<p>升级pod就是重新执行一遍安装命令，不算太漫长</p>
+<pre><code>sudo gem install cocoapods --pre
+pod setup
+</code></pre>
       
     </div>
 
@@ -581,7 +570,7 @@ end
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#升级ruby"><span class="nav-number">1.</span> <span class="nav-text">升级ruby</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述："><span class="nav-number">1.0.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决办法"><span class="nav-number">1.0.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级gem"><span class="nav-number">2.</span> <span class="nav-text">升级gem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#更改ruby的源"><span class="nav-number">2.0.1.</span> <span class="nav-text">更改ruby的源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装cocoapods"><span class="nav-number">3.</span> <span class="nav-text">安装cocoapods</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化索引"><span class="nav-number">3.0.1.</span> <span class="nav-text">初始化索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换pod源"><span class="nav-number">3.0.2.</span> <span class="nav-text">替换pod源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单使用"><span class="nav-number">4.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#升级ruby"><span class="nav-number">1.</span> <span class="nav-text">升级ruby</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述："><span class="nav-number">1.0.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决办法"><span class="nav-number">1.0.2.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级gem"><span class="nav-number">2.</span> <span class="nav-text">升级gem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#更改ruby的源"><span class="nav-number">2.0.1.</span> <span class="nav-text">更改ruby的源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装cocoapods"><span class="nav-number">3.</span> <span class="nav-text">安装cocoapods</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化索引"><span class="nav-number">3.0.1.</span> <span class="nav-text">初始化索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换pod源"><span class="nav-number">3.0.2.</span> <span class="nav-text">替换pod源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单使用"><span class="nav-number">4.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#持续更新（2016-12-28）"><span class="nav-number">5.1.</span> <span class="nav-text">持续更新（2016-12-28）</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

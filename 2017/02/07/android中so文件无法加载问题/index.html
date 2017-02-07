@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="备忘," />
+  <meta name="keywords" content="so动态库," />
 
 
 
@@ -84,19 +84,24 @@
 
 
 
-<meta name="description" content="问题场景ZrcListView是一个非常简单的下拉刷新及加载更多的自定义ListView控件，而且自带的动画效果也不错。
-现在遇到的问题是，当ZrcListView包含多个Header的时候，如果想在下拉刷新的时候，同时更新header中的内容，就造成控件报错。">
+<meta name="description" content="大坑就这么出现了异常如：java.lang.UnsatisfiedLinkError: Native method not found: com.autonavi.amap.mapcore.MapCore.nativeNewInstance
+这可是一直都好好运行着的高德地图啊。就因为增加了一个三方库，就变成这样了，地图死活无法加载。
+原因">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ZrcListView不能在刷新动画时改变header">
-<meta property="og:url" content="http://lonaever.me/2016/12/05/ZrcListView不能在刷新动画时改变header/index.html">
+<meta property="og:title" content="android中so文件无法加载问题">
+<meta property="og:url" content="http://lonaever.me/2017/02/07/android中so文件无法加载问题/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="问题场景ZrcListView是一个非常简单的下拉刷新及加载更多的自定义ListView控件，而且自带的动画效果也不错。
-现在遇到的问题是，当ZrcListView包含多个Header的时候，如果想在下拉刷新的时候，同时更新header中的内容，就造成控件报错。">
-<meta property="og:updated_time" content="2016-12-05T07:37:45.000Z">
+<meta property="og:description" content="大坑就这么出现了异常如：java.lang.UnsatisfiedLinkError: Native method not found: com.autonavi.amap.mapcore.MapCore.nativeNewInstance
+这可是一直都好好运行着的高德地图啊。就因为增加了一个三方库，就变成这样了，地图死活无法加载。
+原因">
+<meta property="og:image" content="http://img.blog.csdn.net/20150728103952907">
+<meta property="og:updated_time" content="2017-02-07T08:23:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZrcListView不能在刷新动画时改变header">
-<meta name="twitter:description" content="问题场景ZrcListView是一个非常简单的下拉刷新及加载更多的自定义ListView控件，而且自带的动画效果也不错。
-现在遇到的问题是，当ZrcListView包含多个Header的时候，如果想在下拉刷新的时候，同时更新header中的内容，就造成控件报错。">
+<meta name="twitter:title" content="android中so文件无法加载问题">
+<meta name="twitter:description" content="大坑就这么出现了异常如：java.lang.UnsatisfiedLinkError: Native method not found: com.autonavi.amap.mapcore.MapCore.nativeNewInstance
+这可是一直都好好运行着的高德地图啊。就因为增加了一个三方库，就变成这样了，地图死活无法加载。
+原因">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20150728103952907">
 
 
 
@@ -117,9 +122,9 @@
 
 
 
-  <link rel="canonical" href="http://lonaever.me/2016/12/05/ZrcListView不能在刷新动画时改变header/"/>
+  <link rel="canonical" href="http://lonaever.me/2017/02/07/android中so文件无法加载问题/"/>
 
-  <title> ZrcListView不能在刷新动画时改变header | lonaever的记忆 </title>
+  <title> android中so文件无法加载问题 | lonaever的记忆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +264,7 @@
             
             
               
-                ZrcListView不能在刷新动画时改变header
+                android中so文件无法加载问题
               
             
           </h1>
@@ -271,8 +276,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-05T15:23:11+08:00" content="2016-12-05">
-              2016-12-05
+            <time itemprop="dateCreated" datetime="2017-02-07T15:51:32+08:00" content="2017-02-07">
+              2017-02-07
             </time>
           </span>
 
@@ -301,8 +306,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/12/05/ZrcListView不能在刷新动画时改变header/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/05/ZrcListView不能在刷新动画时改变header/" itemprop="commentsCount"></span>
+                <a href="/2017/02/07/android中so文件无法加载问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/07/android中so文件无法加载问题/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,12 +330,27 @@
       
 
       
-        <h3 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h3><p>ZrcListView是一个非常简单的下拉刷新及加载更多的自定义ListView控件，而且自带的动画效果也不错。</p>
-<p>现在遇到的问题是，当ZrcListView包含多个Header的时候，如果想在下拉刷新的时候，同时更新header中的内容，就造成控件报错。</p>
-<a id="more"></a>
-<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>下拉刷新只能去执行ListView中内容的更新。在ZrcListView执行完setRefreshSuccess后，稍微延迟后再执行更新header的操作。</p>
-<p>比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">callback=new LGenericsCallback&lt;List&lt;NewsInfo&gt;&gt;() &#123;</div><div class="line">            @Override</div><div class="line">            public void onError(Call call, Exception e, int i) &#123;</div><div class="line">                LogUtils.e(&quot;获取列表&quot; + ns.name + &quot;失败:&quot; + call.request().url().toString(), e);</div><div class="line">                zListView.setRefreshFail(&quot;数据获取失败&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onResponse(List&lt;NewsInfo&gt; response, int i) &#123;</div><div class="line">                ...</div><div class="line">                //control</div><div class="line">                adapter.notifyDataSetChanged();</div><div class="line">                zListView.setRefreshSuccess();</div><div class="line"></div><div class="line">                new Handler().postDelayed(new Runnable() &#123;</div><div class="line">                    @Override</div><div class="line">                    public void run() &#123;</div><div class="line">                        //需要注意，不能在下拉动画的进行时，进行header的操作，否则zrclistview会报错</div><div class="line">                        //在此加载其他数据，用来刷新head</div><div class="line">                    &#125;</div><div class="line">                &#125;, 500);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+        <h3 id="大坑就这么出现了"><a href="#大坑就这么出现了" class="headerlink" title="大坑就这么出现了"></a>大坑就这么出现了</h3><p>异常如：<code>java.lang.UnsatisfiedLinkError: Native method not found: com.autonavi.amap.mapcore.MapCore.nativeNewInstance</code></p>
+<p>这可是一直都好好运行着的高德地图啊。就因为增加了一个三方库，就变成这样了，地图死活无法加载。</p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><a id="more"></a>
+<p>说到底就是so动态链接文件加载不到造成的。而so文件是按照cpu类型进行依次加载的</p>
+<p><img src="http://img.blog.csdn.net/20150728103952907" alt="type"></p>
+<p>但是我们的项目中时常包含多种三方库，比如我的就包含了高德，极光，和pdf阅读。但是每个库提供的cpu版本并不是一致的，如果相差了就会在那样的机型上出现加载不到异常。</p>
+<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>删除多余的cpu类型版本，留下大家都有的，比如就留下armeabi和arm64-v8a。</p>
+<h4 id="但是仍然会有个麻烦，比如pdf阅读插件是通过gradle直接包含进来的，我没法删除）"><a href="#但是仍然会有个麻烦，比如pdf阅读插件是通过gradle直接包含进来的，我没法删除）" class="headerlink" title="但是仍然会有个麻烦，比如pdf阅读插件是通过gradle直接包含进来的，我没法删除）"></a>但是仍然会有个麻烦，比如pdf阅读插件是通过gradle直接包含进来的，我没法删除）</h4><ul>
+<li>这时候，还可以通过改名字。把没有的类型通通复制一遍armeabi进去</li>
+<li><p>####最好的解决办法，通过build.gradle进行配置就能搞定，方法如下：</p>
+<pre><code>defaultConfig {
+...
+
+ndk {
+    //选择要添加的对应cpu类型的.so库。
+    abiFilters &apos;armeabi&apos;, &apos;armeabi-v8a&apos;
+    // 还可以添加 &apos;x86&apos;, &apos;x86_64&apos;, &apos;mips&apos;, &apos;mips64&apos;, &apos;armeabi-v7a&apos;
+}
+}
+</code></pre></li>
+</ul>
 
       
     </div>
@@ -353,7 +373,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/备忘/" rel="tag">#备忘</a>
+            <a href="/tags/so动态库/" rel="tag">#so动态库</a>
           
         </div>
       
@@ -362,17 +382,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/05/FastJson反序列号时的一个问题/" rel="next" title="FastJson反序列号时的一个问题">
-                <i class="fa fa-chevron-left"></i> FastJson反序列号时的一个问题
+              <a href="/2016/12/29/addChildViewController一坑/" rel="next" title="addChildViewController一坑">
+                <i class="fa fa-chevron-left"></i> addChildViewController一坑
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/29/addChildViewController一坑/" rel="prev" title="addChildViewController一坑">
-                addChildViewController一坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -398,8 +414,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/05/ZrcListView不能在刷新动画时改变header/"
-           data-title="ZrcListView不能在刷新动画时改变header" data-url="http://lonaever.me/2016/12/05/ZrcListView不能在刷新动画时改变header/">
+      <div class="ds-thread" data-thread-key="2017/02/07/android中so文件无法加载问题/"
+           data-title="android中so文件无法加载问题" data-url="http://lonaever.me/2017/02/07/android中so文件无法加载问题/">
       </div>
     
   </div>
@@ -490,7 +506,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题场景"><span class="nav-number">1.</span> <span class="nav-text">问题场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#大坑就这么出现了"><span class="nav-number">1.</span> <span class="nav-text">大坑就这么出现了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原因"><span class="nav-number">2.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决思路"><span class="nav-number">3.</span> <span class="nav-text">解决思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#但是仍然会有个麻烦，比如pdf阅读插件是通过gradle直接包含进来的，我没法删除）"><span class="nav-number">3.1.</span> <span class="nav-text">但是仍然会有个麻烦，比如pdf阅读插件是通过gradle直接包含进来的，我没法删除）</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

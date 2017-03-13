@@ -258,6 +258,134 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/13/ios10-上出现的奇怪的约束问题/" itemprop="url">
+                  ios10 上出现的奇怪的约束问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-13T15:11:15+08:00" content="2017-03-13">
+              2017-03-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ios/" itemprop="url" rel="index">
+                    <span itemprop="name">ios</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/13/ios10-上出现的奇怪的约束问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/ios10-上出现的奇怪的约束问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="当ios10-xcode8上出现这样的约束错误"><a href="#当ios10-xcode8上出现这样的约束错误" class="headerlink" title="当ios10-xcode8上出现这样的约束错误"></a>当ios10-xcode8上出现这样的约束错误</h2><pre><code>&quot;&lt;NSLayoutConstraint:0x60000008e240 UITableViewCellContentView:0x7ff0ed5175c0.width == 375&gt;&quot;,
+&quot;&lt;NSLayoutConstraint:0x6180000940a0 UITableViewCellContentView:0x7ff0ed5175c0.width == 376&gt;&quot;
+</code></pre><p>这个问题真是奇怪，在TableViewCell中怎么会出现这样的约束，根本没有这样设置过。</p>
+<p>搜索了好多，终于发现有人说的是这么回事了：</p>
+<blockquote>
+<p>这几天发现了好玩的事情：我使用 storyBoard 和 xib 创建的 tableview 和 cell ，在 Xcode 7 上的时候使用 FD 没有问题，过渡到 Xcode 8 时原先在 Xcode 7 创建的东西也没有问题，可是使用 Xcode 8 创建的 cell 添加到 Xcode 7 时创建 tableview 上就出现高度计算不准的问题，然后完全使用 Xcode 8 来创建 tableView 和 cell 或是将 Xcode 7 创建的 cell 添加到 Xcode 8 创建 tableview 上，FD 也没有问题。</p>
+</blockquote>
+<h3 id="试了一试"><a href="#试了一试" class="headerlink" title="试了一试"></a>试了一试</h3><p>我的xib文件是从以前的工程中拷贝过来的。果断删除重新创建一个，问题再不出现。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>别纠结了，xcode8上的cell重新建，别拷以前的。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/08/NSURL中file路径小坑需注意/" itemprop="url">
                   NSURL中file路径小坑需注意
                 </a>
@@ -1278,128 +1406,6 @@ oo=/a/b/1.mp3
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/24/使用cocoapods/" itemprop="url">
-                  使用cocoapods
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-24T17:08:03+08:00" content="2016-08-24">
-              2016-08-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/24/使用cocoapods/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/24/使用cocoapods/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>重装系统后，安装cocoapods竟然冒出那么多问题，真是奇了怪了。主要是环境问题。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/24/使用cocoapods/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1445,7 +1451,7 @@ oo=/a/b/1.mp3
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1462,7 +1468,7 @@ oo=/a/b/1.mp3
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://lonaever.me/2016/08/17/hexo很方便，很美妙/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
 <meta property="og:description" content="重装系统后，真是不想再去折腾一遍octopress了，实在需要太多配置。osX EICapion 下升级个ruby都是整死人。果断改用hexo，5分钟就能搞定。再把octopress的md文件直接复制过来，就行。">
-<meta property="og:updated_time" content="2016-08-18T08:23:15.000Z">
+<meta property="og:updated_time" content="2017-07-08T08:14:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo很方便，很美妙">
 <meta name="twitter:description" content="重装系统后，真是不想再去折腾一遍octopress了，实在需要太多配置。osX EICapion 下升级个ruby都是整死人。果断改用hexo，5分钟就能搞定。再把octopress的md文件直接复制过来，就行。">
@@ -307,7 +307,14 @@
 <a id="more"></a>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>官方网站：<a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a></p>
 <p>1.安装node.js，官方就推荐了安装方式。<br>The best way to install Node.js is with nvm.</p>
-<p>2.安装命令一行搞定</p>
+<p><a href="https://github.com/creationix/nvm#install-script" target="_blank" rel="external">https://github.com/creationix/nvm#install-script</a></p>
+<p>升级nvm<br>使用git</p>
+<pre><code>(
+  cd &quot;$NVM_DIR&quot;
+  git fetch origin
+  git checkout `git describe --abbrev=0 --tags --    match &quot;v[0-9]*&quot; origin`
+    ) &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;
+</code></pre><p>2.安装命令一行搞定</p>
 <pre><code>$ npm install -g hexo-cli
 </code></pre><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
 <li>主题选用<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">nexT</a>，非常简洁，中文文档也很细致。</li>
@@ -449,7 +456,7 @@ $ hexo server
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

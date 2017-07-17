@@ -258,6 +258,110 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/07/ios使用JSContext的大坑/" itemprop="url">
+                  ios使用JSContext的大坑
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-07T17:01:17+08:00" content="2016-11-07">
+              2016-11-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/07/ios使用JSContext的大坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/07/ios使用JSContext的大坑/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。</p>
+<h3 id="问题的描述："><a href="#问题的描述：" class="headerlink" title="问题的描述："></a>问题的描述：</h3><p>wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/07/ios使用JSContext的大坑/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/11/01/ios-pod中使用mainBundle问题/" itemprop="url">
                   ios pod中使用mainBundle问题
                 </a>
@@ -1304,128 +1408,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/18/ViewPager数据变化是需要立即刷新的/" itemprop="url">
-                  ViewPager数据变化是需要立即刷新的
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-18T17:21:29+08:00" content="2016-08-18">
-              2016-08-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/18/ViewPager数据变化是需要立即刷新的/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/18/ViewPager数据变化是需要立即刷新的/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这是一个常见的问题，如果ViewPager中的数量在异步通信中变化了，但是不及时执行notify的话，就会异常了。这种情况在不同手机上，表现的还稍微有点不一样，主要是时间上吧。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/18/ViewPager数据变化是需要立即刷新的/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1471,7 +1453,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

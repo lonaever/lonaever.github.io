@@ -1,0 +1,706 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux,telnet,openssh,openssl," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。
+准备安装包
+openssh7.6p1 https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/
+openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下升级OpenSSH">
+<meta property="og:url" content="http://lonaever.github.io/2018/03/06/Linux下升级OpenSSH/index.html">
+<meta property="og:site_name" content="lonaever的记忆">
+<meta property="og:description" content="CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。
+准备安装包
+openssh7.6p1 https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/
+openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
+<meta property="og:updated_time" content="2018-03-07T01:56:02.983Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux下升级OpenSSH">
+<meta name="twitter:description" content="CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。
+准备安装包
+openssh7.6p1 https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/
+openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://lonaever.github.io/2018/03/06/Linux下升级OpenSSH/"/>
+
+  <title> Linux下升级OpenSSH | lonaever的记忆 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lonaever的记忆</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">记不住的东西</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Linux下升级OpenSSH
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-06T16:09:47+08:00" content="2018-03-06">
+              2018-03-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/系统运维/" itemprop="url" rel="index">
+                    <span itemprop="name">系统运维</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/03/06/Linux下升级OpenSSH/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/06/Linux下升级OpenSSH/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。</p>
+<h3 id="准备安装包"><a href="#准备安装包" class="headerlink" title="准备安装包"></a>准备安装包</h3><ol>
+<li>openssh7.6p1 <a href="https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/" target="_blank" rel="external">https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/</a></li>
+<li>openssl1.1.0g <a href="https://www.openssl.org/source/openssl-1.1.0g.tar.gz" target="_blank" rel="external">https://www.openssl.org/source/openssl-1.1.0g.tar.gz</a></li>
+</ol>
+<a id="more"></a>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
+<li>检查版本 <code>openssl version -a</code> <code>ssh -V</code></li>
+<li>安装编译需要的依赖 <code>yum install -y zlib-devel gcc gcc-c++ make zlib</code></li>
+<li>卸载已经安装的sshd，执行<code>yum remove openssh -y</code></li>
+<li><p>准备telnet的环境，避免ssh无法使用。</p>
+<p> 安装telnetserver及程序控制xinetd。一般情况下，xinetd是已经默认安装了。可以检查一下是否存在xinetd的进程。否则执行安装。</p>
+<ul>
+<li>安装<code>yum install telnet-server -y</code></li>
+<li>安装<code>yum install xinetd -y</code></li>
+<li>配置xinetd，<code>/etc/xinetd.d/telnet</code>中<code>disable</code>设置为<code>no</code>。</li>
+<li>重启xinetd服务 <code>service xinetd restart</code></li>
+<li>确保防火墙已允许23端口。否则添加<code>/etc/sysconfig/iptables</code>中规则<code>-A INPUT -m state --state NEW -m tcp -p tcp --dport 23 -j ACCEPT</code>，并重启iptables，<code>service iptables restart</code></li>
+<li>为了可以使用root用户telnet登录，需要将安全配置屏蔽掉。可直接修改文件<code>mv /etc/securetty /etc/securetty.bak</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h3><p><code>tar -zxvf openssh-7.6p1.tar.gz</code><br><code>tar -zxvf openssl1.1.0g.tar.gz</code></p>
+<h3 id="编译安装openssl"><a href="#编译安装openssl" class="headerlink" title="编译安装openssl"></a>编译安装openssl</h3><pre><code>cd openssl-OpenSSL_1_1_0g
+./config --prefix=/usr/local/openssl // 指定安装路径
+make &amp;&amp; make install
+</code></pre><h5 id="替换老版本"><a href="#替换老版本" class="headerlink" title="替换老版本"></a>替换老版本</h5><pre><code>mv /usr/bin/openssl /usr/bin/openssl.old
+mv /usr/lib64/openssl /usr/lib64/openssl.old
+mv /usr/lib64/libssl.so /usr/lib64/libssl.so.old
+ln -s /usr/local/openssl/bin/openssl /usr/bin/openssl
+ln -s /usr/local/openssl/include/openssl /usr/include/openssl
+ln -s /usr/local/openssl/lib/libssl.so /usr/lib64/libssl.so
+echo &quot;/usr/local/openssl/lib&quot; &gt;&gt; /etc/ld.so.conf
+ldconfig -v // 建立动态链接
+</code></pre><h5 id="成功后检查"><a href="#成功后检查" class="headerlink" title="成功后检查"></a>成功后检查</h5><p><code>openssl version</code></p>
+<h3 id="编译安装openssh"><a href="#编译安装openssh" class="headerlink" title="编译安装openssh"></a>编译安装openssh</h3><pre><code>cd openssh-7.5p1
+./configure --with-ssl-dir=/usr/local/openssl
+make &amp;&amp; make install
+</code></pre><p><strong>–with-ssl-dir 如果openssl已经基于源码升级需要加此参数</strong></p>
+<h5 id="ssh服务文件"><a href="#ssh服务文件" class="headerlink" title="ssh服务文件"></a>ssh服务文件</h5><pre><code>cp ./contrib/redhat/sshd.init /etc/init.d/sshd
+chmod +x /etc/init.d/sshd
+</code></pre><p>修改其中的配置</p>
+<pre><code>SSHD=/usr/sbin/sshd 为 SSHD=/usr/local/sbin/sshd
+/usr/sbin/ssh-keygen -A 为 /usr/local/bin/ssh-keygen -A 
+在 ‘$SSHD $OPTIONS &amp;&amp; success || failure’这一行上面加上一行 ‘OPTIONS=&quot;-f /etc/ssh/sshd_config&quot;’
+</code></pre><p><strong>这一操作很重要！很重要！很重要！重要的事情说三遍，因为openssh安装好默认是不执行sshd_config文件的，所以即使在sshd_config中配置允许root用户远程登录，但是不加上这句命令，还是不会生效！</strong></p>
+<p>加入服务</p>
+<pre><code>chkconfig --add sshd
+</code></pre><h5 id="sshd配置文件"><a href="#sshd配置文件" class="headerlink" title="sshd配置文件"></a>sshd配置文件</h5><pre><code>cp sshd_config /etc/ssh/sshd_config
+vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
+</code></pre><h5 id="重启生效"><a href="#重启生效" class="headerlink" title="重启生效"></a>重启生效</h5><p><code>service ssh start</code></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.cnblogs.com/xiaochina/p/7486073.html" target="_blank" rel="external">http://www.cnblogs.com/xiaochina/p/7486073.html</a><br><a href="https://segmentfault.com/a/1190000008890926" target="_blank" rel="external">https://segmentfault.com/a/1190000008890926</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
+          
+            <a href="/tags/telnet/" rel="tag">#telnet</a>
+          
+            <a href="/tags/openssh/" rel="tag">#openssh</a>
+          
+            <a href="/tags/openssl/" rel="tag">#openssl</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/24/node-js中使用cheerio的基本用法/" rel="next" title="node.js中使用cheerio的基本用法">
+                <i class="fa fa-chevron-left"></i> node.js中使用cheerio的基本用法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/03/06/Linux下升级OpenSSH/"
+           data-title="Linux下升级OpenSSH" data-url="http://lonaever.github.io/2018/03/06/Linux下升级OpenSSH/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="lonaever" />
+          <p class="site-author-name" itemprop="name">lonaever</p>
+          <p class="site-description motion-element" itemprop="description">lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备安装包"><span class="nav-number">1.</span> <span class="nav-text">准备安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境准备"><span class="nav-number">2.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解压安装包"><span class="nav-number">3.</span> <span class="nav-text">解压安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装openssl"><span class="nav-number">4.</span> <span class="nav-text">编译安装openssl</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换老版本"><span class="nav-number">4.0.1.</span> <span class="nav-text">替换老版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#成功后检查"><span class="nav-number">4.0.2.</span> <span class="nav-text">成功后检查</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装openssh"><span class="nav-number">5.</span> <span class="nav-text">编译安装openssh</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ssh服务文件"><span class="nav-number">5.0.1.</span> <span class="nav-text">ssh服务文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sshd配置文件"><span class="nav-number">5.0.2.</span> <span class="nav-text">sshd配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重启生效"><span class="nav-number">5.0.3.</span> <span class="nav-text">重启生效</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number"></span> <span class="nav-text">参考链接</span></a></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lonaever</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lonaever"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

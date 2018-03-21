@@ -96,7 +96,7 @@ openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
 准备安装包
 openssh7.6p1 https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/
 openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
-<meta property="og:updated_time" content="2018-03-07T01:56:02.983Z">
+<meta property="og:updated_time" content="2018-03-21T07:48:21.308Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下升级OpenSSH">
 <meta name="twitter:description" content="CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。
@@ -355,7 +355,7 @@ openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
 </ol>
 <h3 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h3><p><code>tar -zxvf openssh-7.6p1.tar.gz</code><br><code>tar -zxvf openssl1.1.0g.tar.gz</code></p>
 <h3 id="编译安装openssl"><a href="#编译安装openssl" class="headerlink" title="编译安装openssl"></a>编译安装openssl</h3><pre><code>cd openssl-OpenSSL_1_1_0g
-./config --prefix=/usr/local/openssl // 指定安装路径
+./config shared --prefix=/usr/local/openssl // 指定安装路径
 make &amp;&amp; make install
 </code></pre><h5 id="替换老版本"><a href="#替换老版本" class="headerlink" title="替换老版本"></a>替换老版本</h5><pre><code>mv /usr/bin/openssl /usr/bin/openssl.old
 mv /usr/lib64/openssl /usr/lib64/openssl.old
@@ -381,9 +381,15 @@ chmod +x /etc/init.d/sshd
 <pre><code>chkconfig --add sshd
 </code></pre><h5 id="sshd配置文件"><a href="#sshd配置文件" class="headerlink" title="sshd配置文件"></a>sshd配置文件</h5><pre><code>cp sshd_config /etc/ssh/sshd_config
 vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
-</code></pre><h5 id="重启生效"><a href="#重启生效" class="headerlink" title="重启生效"></a>重启生效</h5><p><code>service ssh start</code></p>
+</code></pre><h5 id="重启生效"><a href="#重启生效" class="headerlink" title="重启生效"></a>重启生效</h5><p><code>service sshd start</code></p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.cnblogs.com/xiaochina/p/7486073.html" target="_blank" rel="external">http://www.cnblogs.com/xiaochina/p/7486073.html</a><br><a href="https://segmentfault.com/a/1190000008890926" target="_blank" rel="external">https://segmentfault.com/a/1190000008890926</a></p>
-
+<h2 id="大坑"><a href="#大坑" class="headerlink" title="大坑"></a>大坑</h2><p>1、 libcrypto.a(rsaz_exp.o): could not read symbols: Bad value</p>
+<p>这个错误是在make install openssl的时候出现的。原因不明，竟然是解压方式的问题。需要用<code>tar -xf openssl-1.0.2g.tar.gz</code> 不能加z，不知道是为什么。</p>
+<p>2、openssl1.1.0版本还用不在ssh上。只能用1.0.2的版本。<br>3、openssl的config选项，一定要加上 shared。openssh从6.5版本开始，使用openssl 源码编译的时候，必须使用动态库。否则会出现诸如：</p>
+<pre><code>1.) configure: error: *** Can&apos;t find recent OpenSSL libcrypto (see config.log for details) ***
+2.) OpenSSL version mismatch. 
+3.) checking OpenSSL header version... not found
+</code></pre>
       
     </div>
 
@@ -427,6 +433,10 @@ vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/14/CSS3选择器笔记/" rel="prev" title="CSS3选择器笔记">
+                CSS3选择器笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -498,7 +508,7 @@ vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-count">30</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -506,7 +516,7 @@ vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -515,7 +525,7 @@ vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -544,7 +554,7 @@ vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备安装包"><span class="nav-number">1.</span> <span class="nav-text">准备安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境准备"><span class="nav-number">2.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解压安装包"><span class="nav-number">3.</span> <span class="nav-text">解压安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装openssl"><span class="nav-number">4.</span> <span class="nav-text">编译安装openssl</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换老版本"><span class="nav-number">4.0.1.</span> <span class="nav-text">替换老版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#成功后检查"><span class="nav-number">4.0.2.</span> <span class="nav-text">成功后检查</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装openssh"><span class="nav-number">5.</span> <span class="nav-text">编译安装openssh</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ssh服务文件"><span class="nav-number">5.0.1.</span> <span class="nav-text">ssh服务文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sshd配置文件"><span class="nav-number">5.0.2.</span> <span class="nav-text">sshd配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重启生效"><span class="nav-number">5.0.3.</span> <span class="nav-text">重启生效</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number"></span> <span class="nav-text">参考链接</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备安装包"><span class="nav-number">1.</span> <span class="nav-text">准备安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境准备"><span class="nav-number">2.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解压安装包"><span class="nav-number">3.</span> <span class="nav-text">解压安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装openssl"><span class="nav-number">4.</span> <span class="nav-text">编译安装openssl</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#替换老版本"><span class="nav-number">4.0.1.</span> <span class="nav-text">替换老版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#成功后检查"><span class="nav-number">4.0.2.</span> <span class="nav-text">成功后检查</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译安装openssh"><span class="nav-number">5.</span> <span class="nav-text">编译安装openssh</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ssh服务文件"><span class="nav-number">5.0.1.</span> <span class="nav-text">ssh服务文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sshd配置文件"><span class="nav-number">5.0.2.</span> <span class="nav-text">sshd配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重启生效"><span class="nav-number">5.0.3.</span> <span class="nav-text">重启生效</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number"></span> <span class="nav-text">参考链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大坑"><span class="nav-number"></span> <span class="nav-text">大坑</span></a></div>
             
           </div>
         </section>

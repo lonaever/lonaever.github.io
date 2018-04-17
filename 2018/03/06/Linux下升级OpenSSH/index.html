@@ -87,7 +87,7 @@
 <meta name="description" content="CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。
 准备安装包
 openssh7.6p1 https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/
-openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
+openssl1.0.2n https://www.openssl.org/source/openssl-1.0.2n.tar.gz">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux下升级OpenSSH">
 <meta property="og:url" content="http://lonaever.github.io/2018/03/06/Linux下升级OpenSSH/index.html">
@@ -95,14 +95,14 @@ openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
 <meta property="og:description" content="CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。
 准备安装包
 openssh7.6p1 https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/
-openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
-<meta property="og:updated_time" content="2018-03-21T07:48:21.308Z">
+openssl1.0.2n https://www.openssl.org/source/openssl-1.0.2n.tar.gz">
+<meta property="og:updated_time" content="2018-03-28T02:53:57.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下升级OpenSSH">
 <meta name="twitter:description" content="CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。
 准备安装包
 openssh7.6p1 https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/
-openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
+openssl1.0.2n https://www.openssl.org/source/openssl-1.0.2n.tar.gz">
 
 
 
@@ -334,7 +334,7 @@ openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
         <p>CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。</p>
 <h3 id="准备安装包"><a href="#准备安装包" class="headerlink" title="准备安装包"></a>准备安装包</h3><ol>
 <li>openssh7.6p1 <a href="https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/" target="_blank" rel="external">https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/</a></li>
-<li>openssl1.1.0g <a href="https://www.openssl.org/source/openssl-1.1.0g.tar.gz" target="_blank" rel="external">https://www.openssl.org/source/openssl-1.1.0g.tar.gz</a></li>
+<li>openssl1.0.2n <a href="https://www.openssl.org/source/openssl-1.0.2n.tar.gz" target="_blank" rel="external">https://www.openssl.org/source/openssl-1.0.2n.tar.gz</a></li>
 </ol>
 <a id="more"></a>
 <h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
@@ -353,8 +353,8 @@ openssl1.1.0g https://www.openssl.org/source/openssl-1.1.0g.tar.gz">
 </ul>
 </li>
 </ol>
-<h3 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h3><p><code>tar -zxvf openssh-7.6p1.tar.gz</code><br><code>tar -zxvf openssl1.1.0g.tar.gz</code></p>
-<h3 id="编译安装openssl"><a href="#编译安装openssl" class="headerlink" title="编译安装openssl"></a>编译安装openssl</h3><pre><code>cd openssl-OpenSSL_1_1_0g
+<h3 id="解压安装包"><a href="#解压安装包" class="headerlink" title="解压安装包"></a>解压安装包</h3><p><code>tar -zxvf openssh-7.6p1.tar.gz</code><br><code>tar -xf openssl1.0.2n.tar.gz</code></p>
+<h3 id="编译安装openssl"><a href="#编译安装openssl" class="headerlink" title="编译安装openssl"></a>编译安装openssl</h3><pre><code>cd openssl-OpenSSL_1_0_2n
 ./config shared --prefix=/usr/local/openssl // 指定安装路径
 make &amp;&amp; make install
 </code></pre><h5 id="替换老版本"><a href="#替换老版本" class="headerlink" title="替换老版本"></a>替换老版本</h5><pre><code>mv /usr/bin/openssl /usr/bin/openssl.old
@@ -366,7 +366,7 @@ ln -s /usr/local/openssl/lib/libssl.so /usr/lib64/libssl.so
 echo &quot;/usr/local/openssl/lib&quot; &gt;&gt; /etc/ld.so.conf
 ldconfig -v // 建立动态链接
 </code></pre><h5 id="成功后检查"><a href="#成功后检查" class="headerlink" title="成功后检查"></a>成功后检查</h5><p><code>openssl version</code></p>
-<h3 id="编译安装openssh"><a href="#编译安装openssh" class="headerlink" title="编译安装openssh"></a>编译安装openssh</h3><pre><code>cd openssh-7.5p1
+<h3 id="编译安装openssh"><a href="#编译安装openssh" class="headerlink" title="编译安装openssh"></a>编译安装openssh</h3><pre><code>cd openssh-7.6p
 ./configure --with-ssl-dir=/usr/local/openssl
 make &amp;&amp; make install
 </code></pre><p><strong>–with-ssl-dir 如果openssl已经基于源码升级需要加此参数</strong></p>
@@ -381,6 +381,12 @@ chmod +x /etc/init.d/sshd
 <pre><code>chkconfig --add sshd
 </code></pre><h5 id="sshd配置文件"><a href="#sshd配置文件" class="headerlink" title="sshd配置文件"></a>sshd配置文件</h5><pre><code>cp sshd_config /etc/ssh/sshd_config
 vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
+
+升级后sftp在有些客户端上连不上，报：Received unexpected end-of-file from SFTP server
+
+这个时候可以修改：
+将Subsystem      sftp    /usr/libexec/openssh/sftp-server 
+改为Subsystem       sftp    internal-sftp
 </code></pre><h5 id="重启生效"><a href="#重启生效" class="headerlink" title="重启生效"></a>重启生效</h5><p><code>service sshd start</code></p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="http://www.cnblogs.com/xiaochina/p/7486073.html" target="_blank" rel="external">http://www.cnblogs.com/xiaochina/p/7486073.html</a><br><a href="https://segmentfault.com/a/1190000008890926" target="_blank" rel="external">https://segmentfault.com/a/1190000008890926</a></p>
 <h2 id="大坑"><a href="#大坑" class="headerlink" title="大坑"></a>大坑</h2><p>1、 libcrypto.a(rsaz_exp.o): could not read symbols: Bad value</p>
@@ -508,7 +514,7 @@ vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -516,7 +522,7 @@ vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -525,7 +531,7 @@ vim /etc/ssh/sshd_config 修改 PermitRootLogin yes,并去掉注释
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

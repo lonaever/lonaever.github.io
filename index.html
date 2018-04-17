@@ -258,6 +258,149 @@
             
               
                 
+                <a class="post-title-link" href="/2018/04/17/Linux挂载磁盘和分区备忘/" itemprop="url">
+                  Linux挂载磁盘和分区备忘
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-04-17T15:19:22+08:00" content="2018-04-17">
+              2018-04-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/04/17/Linux挂载磁盘和分区备忘/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/04/17/Linux挂载磁盘和分区备忘/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>很少操作服务器，这些命令不常用，备忘一下。</p>
+<p>本次使用微软Azure创建的虚机，然后添加了500G的数据磁盘。添加完成后，需要登录到虚机上完成分区。</p>
+<h3 id="1-查看磁盘"><a href="#1-查看磁盘" class="headerlink" title="1. 查看磁盘"></a>1. 查看磁盘</h3><p><code>sudo fdisk -l</code></p>
+<h3 id="2-进入分区"><a href="#2-进入分区" class="headerlink" title="2. 进入分区"></a>2. 进入分区</h3><p><code>sudo fdisk /dev/sdc</code></p>
+<pre><code>Command (m for help): n
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-10485759, default 2048):
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-10485759, default 10485759):
+Using default value 10485759
+</code></pre><p>Last sector用于指定分区的大小，比如输入+50G，就表示分50G的大小。</p>
+<h4 id="重复此步骤可以创建出多个分区。"><a href="#重复此步骤可以创建出多个分区。" class="headerlink" title="重复此步骤可以创建出多个分区。"></a>重复此步骤可以创建出多个分区。</h4><h3 id="3-格式化"><a href="#3-格式化" class="headerlink" title="3. 格式化"></a>3. 格式化</h3><p><code>sudo mkfs -t ext4 /dev/sdc1</code></p>
+<h3 id="4-挂载"><a href="#4-挂载" class="headerlink" title="4. 挂载"></a>4. 挂载</h3><pre><code>sudo mkdir /datadrive
+sudo mount /dev/sdc1 /datadrive
+</code></pre><h3 id="5-启动引导"><a href="#5-启动引导" class="headerlink" title="5. 启动引导"></a>5. 启动引导</h3><p>推荐使用uuid的方式</p>
+<p><code>sudo -i blkid</code> 查看uuid</p>
+<p>编辑配置文件</p>
+<pre><code>sudo vi /etc/fstab
+UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,nofail   1   2
+</code></pre><p>后面1和2，分别代表1是dump可以识别为需要备份的区域。2是个启动检查什么的玩意。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/03/14/CSS3选择器笔记/" itemprop="url">
                   CSS3选择器笔记
                 </a>
@@ -469,7 +612,7 @@
           <p>CentOS6.x的环境下，默认的openssh版本是比较低的，总是会扫出很多漏洞。升级openssh步骤比较多，记录一下。</p>
 <h3 id="准备安装包"><a href="#准备安装包" class="headerlink" title="准备安装包"></a>准备安装包</h3><ol>
 <li>openssh7.6p1 <a href="https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/">https://openbsd.hk/pub/OpenBSD/OpenSSH/portable/</a></li>
-<li>openssl1.1.0g <a href="https://www.openssl.org/source/openssl-1.1.0g.tar.gz">https://www.openssl.org/source/openssl-1.1.0g.tar.gz</a></li>
+<li>openssl1.0.2n <a href="https://www.openssl.org/source/openssl-1.0.2n.tar.gz">https://www.openssl.org/source/openssl-1.0.2n.tar.gz</a></li>
 </ol>
           <div class="post-more-link text-center">
             <a class="btn" href="/2018/03/06/Linux下升级OpenSSH/#more" rel="contents">
@@ -1325,141 +1468,11 @@ NSLog(@&quot;num=%tu&quot;,num);
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/08/NSURL中file路径小坑需注意/" itemprop="url">
-                  NSURL中file路径小坑需注意
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-08T11:52:31+08:00" content="2017-03-08">
-              2017-03-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/03/08/NSURL中file路径小坑需注意/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/08/NSURL中file路径小坑需注意/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这是一个小坑，不注意还真不易发现，都有点不好意思做这个记录了。</p>
-<p>对于描述文件路径的NSURL，取出的绝对路径，到底用哪个方法。</p>
-<h3 id="小测试"><a href="#小测试" class="headerlink" title="小测试"></a>小测试</h3><pre><code>NSURL *fileurl=[NSURL fileURLWithPath:@&quot;/a/b/1.mp3&quot;];
-   NSLog(@&quot;filepath=%@&quot;,fileurl.absoluteString);
-   NSLog(@&quot;oo=%@&quot;,fileurl.path);
-</code></pre><p>输出：</p>
-<blockquote>
-<pre><code>filepath=file:///a/b/1.mp3
-oo=/a/b/1.mp3
-</code></pre></blockquote>
-<p>因为用带有scheme，协议名，如“file://”开头去再去初始化一个NSURL就会有问题了。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1500,7 +1513,7 @@ oo=/a/b/1.mp3
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1508,7 +1521,7 @@ oo=/a/b/1.mp3
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1517,7 +1530,7 @@ oo=/a/b/1.mp3
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

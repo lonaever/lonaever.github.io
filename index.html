@@ -258,6 +258,168 @@
             
               
                 
+                <a class="post-title-link" href="/2018/09/07/node下环境变量的使用/" itemprop="url">
+                  node下环境变量的使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-09-07T10:31:39+08:00" content="2018-09-07">
+              2018-09-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/09/07/node下环境变量的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/09/07/node下环境变量的使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用Express框架的时候，对于环境变量常看见是这样使用的：</p>
+<ol>
+<li><p>app.js里面有这样的写法</p>
+<pre><code>res.locals.message = err.message;
+  res.locals.error = req.app.get(&apos;env&apos;) === &apos;development&apos; ? err : {};
+</code></pre></li>
+<li><p>bin/www里面式样写的</p>
+<pre><code>/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || &apos;3000&apos;);
+app.set(&apos;port&apos;, port);
+</code></pre></li>
+<li><p>express文档上有这么写</p>
+<pre><code>启动这个应用（MacOS 或 Linux 平台）：
+$ DEBUG=myapp npm start
+Windows 平台使用如下命令：
+&gt; set DEBUG=myapp &amp; npm start
+</code></pre></li>
+</ol>
+<h2 id="process-env的用法"><a href="#process-env的用法" class="headerlink" title="process.env的用法"></a>process.env的用法</h2><p>默认是通过环境变量中的NODE_ENV来控制的。配置NODE_ENV有好几个办法。</p>
+<ol>
+<li><p>通过启动命令中去设置，只对当前应用有效。比如可以直接在package.json中去这样配置，scripts。</p>
+<pre><code>&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;PORT=3000 node ./bin/www&quot;,
+    &quot;production&quot;: &quot;NODE_ENV=production PORT=3000 node ./bin/www&quot;,
+    &quot;doc&quot;: &quot;apidoc -i ./routes/ -o ./apidoc/&quot;
+  },
+</code></pre></li>
+</ol>
+<p>然后通过npm run production就是生产环境的启动啦。</p>
+<ol>
+<li>通过linux下的环境变量配置来直接设置NODE_ENV。</li>
+</ol>
+<ul>
+<li><code>export NODE_ENV=PRODUCTION</code> 只针对当前shell有效。</li>
+<li>编辑当前用户目录下的.bash_profile，<code>export NODE_ENV=production</code></li>
+<li>对所有用户生效编辑/etc/profile，添加<code>export NODE_ENV=production</code></li>
+</ul>
+<ol>
+<li>windows环境变量，右键电脑属性中。临时配置通过启动命令中，增加set PORT=8080</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/04/17/Linux挂载磁盘和分区备忘/" itemprop="url">
                   Linux挂载磁盘和分区备忘
                 </a>
@@ -968,10 +1130,22 @@ UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,nofail 
         
           
             <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。</p>
-<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><h4 id="通过ISO镜像来制作源"><a href="#通过ISO镜像来制作源" class="headerlink" title="通过ISO镜像来制作源"></a>通过ISO镜像来制作源</h4><ol>
+<h4 id="通过ISO镜像来制作源"><a href="#通过ISO镜像来制作源" class="headerlink" title="通过ISO镜像来制作源"></a>通过ISO镜像来制作源</h4><ol>
 <li>首先复制一个镜像文件至服务器上。存放在<code>/mnt/iso/Centos.iso</code></li>
 <li>创建一个挂载目录 <code>mkdir /mnt/centos</code></li>
+<li>添加到自动运行中<br><code>vi /etc/fstab</code><br>追加下面一行<br><code>/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt/centos  iso9660  defaults,ro,loop  0  0</code></li>
+<li>执行全量命令，重新挂载<code>mount -a</code></li>
+<li><p><code>vi /etc/yum.repos.d/CentOS-Local.repo</code> 新建本地源配置文件<br>添加下面几行</p>
+<pre><code>[local]
+name=local
+baseurl=file:///mnt/centos
+enabled=1
+gpgcheck=1
+gpgkey=file:///mnt/centos/RPM-GPG-KEY-CentOS-7
+</code></pre></li>
 </ol>
+<p>接着重建下yum源缓存<br><code>yum clean  yum repolist</code></p>
+<p>6、可以把/etc/yum.repo.d/下的其他文件都删了。</p>
 
           
         
@@ -1339,135 +1513,6 @@ NSLog(@&quot;num=%tu&quot;,num);
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/13/ios10-上出现的奇怪的约束问题/" itemprop="url">
-                  ios10 上出现的奇怪的约束问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-13T15:11:15+08:00" content="2017-03-13">
-              2017-03-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/03/13/ios10-上出现的奇怪的约束问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/ios10-上出现的奇怪的约束问题/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="当ios10-xcode8上出现这样的约束错误"><a href="#当ios10-xcode8上出现这样的约束错误" class="headerlink" title="当ios10-xcode8上出现这样的约束错误"></a>当ios10-xcode8上出现这样的约束错误</h2><pre><code>&quot;&lt;NSLayoutConstraint:0x60000008e240 UITableViewCellContentView:0x7ff0ed5175c0.width == 375&gt;&quot;,
-&quot;&lt;NSLayoutConstraint:0x6180000940a0 UITableViewCellContentView:0x7ff0ed5175c0.width == 376&gt;&quot;
-</code></pre><p>这个问题真是奇怪，在TableViewCell中怎么会出现这样的约束，根本没有这样设置过。</p>
-<p>搜索了好多，终于发现有人说的是这么回事了：</p>
-<blockquote>
-<p>这几天发现了好玩的事情：我使用 storyBoard 和 xib 创建的 tableview 和 cell ，在 Xcode 7 上的时候使用 FD 没有问题，过渡到 Xcode 8 时原先在 Xcode 7 创建的东西也没有问题，可是使用 Xcode 8 创建的 cell 添加到 Xcode 7 时创建 tableview 上就出现高度计算不准的问题，然后完全使用 Xcode 8 来创建 tableView 和 cell 或是将 Xcode 7 创建的 cell 添加到 Xcode 8 创建 tableview 上，FD 也没有问题。</p>
-</blockquote>
-<h3 id="试了一试"><a href="#试了一试" class="headerlink" title="试了一试"></a>试了一试</h3><p>我的xib文件是从以前的工程中拷贝过来的。果断删除重新创建一个，问题再不出现。</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>别纠结了，xcode8上的cell重新建，别拷以前的。</p>
-<h3 id="原来是其他造成的"><a href="#原来是其他造成的" class="headerlink" title="原来是其他造成的"></a>原来是其他造成的</h3><p>FD的使用，需要注意的是，父视图创建后的宽度，如果变化了，才会出现那样的异常。而一般情况下，从storyboard中创建的，视图没有宽度不会变化。但是从addChild弄出来的，就会出现变化了。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1513,7 +1558,7 @@ NSLog(@&quot;num=%tu&quot;,num);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

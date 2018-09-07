@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="lonaever, ios, android" />
+  <meta name="keywords" content="node," />
 
 
 
@@ -84,15 +84,40 @@
 
 
 
-<meta name="description" content="lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lonaever的记忆">
-<meta property="og:url" content="http://lonaever.github.io/tags/AutoLayout/index.html">
+<meta name="description" content="使用Express框架的时候，对于环境变量常看见是这样使用的：
+
+app.js里面有这样的写法
+res.locals.message = err.message;
+  res.locals.error = req.app.get(&amp;apos;env&amp;apos;) === &amp;apos;development&amp;apos; ? err : {};
+
+bin/www里面式样写的
+/**
+ * Get po">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node下环境变量的使用">
+<meta property="og:url" content="http://lonaever.github.io/2018/09/07/node下环境变量的使用/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的">
+<meta property="og:description" content="使用Express框架的时候，对于环境变量常看见是这样使用的：
+
+app.js里面有这样的写法
+res.locals.message = err.message;
+  res.locals.error = req.app.get(&amp;apos;env&amp;apos;) === &amp;apos;development&amp;apos; ? err : {};
+
+bin/www里面式样写的
+/**
+ * Get po">
+<meta property="og:updated_time" content="2018-09-07T02:57:19.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lonaever的记忆">
-<meta name="twitter:description" content="lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的">
+<meta name="twitter:title" content="node下环境变量的使用">
+<meta name="twitter:description" content="使用Express框架的时候，对于环境变量常看见是这样使用的：
+
+app.js里面有这样的写法
+res.locals.message = err.message;
+  res.locals.error = req.app.get(&amp;apos;env&amp;apos;) === &amp;apos;development&amp;apos; ? err : {};
+
+bin/www里面式样写的
+/**
+ * Get po">
 
 
 
@@ -113,9 +138,9 @@
 
 
 
-  <link rel="canonical" href="http://lonaever.github.io/tags/AutoLayout/"/>
+  <link rel="canonical" href="http://lonaever.github.io/2018/09/07/node下环境变量的使用/"/>
 
-  <title> 标签: AutoLayout | lonaever的记忆 </title>
+  <title> node下环境变量的使用 | lonaever的记忆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +161,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,46 +259,190 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        AutoLayout
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                node下环境变量的使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-09-07T10:31:39+08:00" content="2018-09-07">
+              2018-09-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/09/07/node下环境变量的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/09/07/node下环境变量的使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>使用Express框架的时候，对于环境变量常看见是这样使用的：</p>
+<ol>
+<li><p>app.js里面有这样的写法</p>
+<pre><code>res.locals.message = err.message;
+  res.locals.error = req.app.get(&apos;env&apos;) === &apos;development&apos; ? err : {};
+</code></pre></li>
+<li><p>bin/www里面式样写的</p>
+<pre><code>/**
+ * Get port from environment and store in Express.
+ */
 
-      <h1 class="post-title">
+var port = normalizePort(process.env.PORT || &apos;3000&apos;);
+app.set(&apos;port&apos;, port);
+</code></pre></li>
+<li><p>express文档上有这么写</p>
+<pre><code>启动这个应用（MacOS 或 Linux 平台）：
+$ DEBUG=myapp npm start
+Windows 平台使用如下命令：
+&gt; set DEBUG=myapp &amp; npm start
+</code></pre></li>
+</ol>
+<h2 id="process-env的用法"><a href="#process-env的用法" class="headerlink" title="process.env的用法"></a>process.env的用法</h2><p>默认是通过环境变量中的NODE_ENV来控制的。配置NODE_ENV有好几个办法。</p>
+<ol>
+<li><p>通过启动命令中去设置，只对当前应用有效。比如可以直接在package.json中去这样配置，scripts。</p>
+<pre><code>&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;PORT=3000 node ./bin/www&quot;,
+    &quot;production&quot;: &quot;NODE_ENV=production PORT=3000 node ./bin/www&quot;,
+    &quot;doc&quot;: &quot;apidoc -i ./routes/ -o ./apidoc/&quot;
+  },
+</code></pre></li>
+</ol>
+<p>然后通过npm run production就是生产环境的启动啦。</p>
+<ol>
+<li>通过linux下的环境变量配置来直接设置NODE_ENV。</li>
+</ol>
+<ul>
+<li><code>export NODE_ENV=PRODUCTION</code> 只针对当前shell有效。</li>
+<li>编辑当前用户目录下的.bash_profile，<code>export NODE_ENV=production</code></li>
+<li>对所有用户生效编辑/etc/profile，添加<code>export NODE_ENV=production</code></li>
+</ul>
+<ol>
+<li>windows环境变量，右键电脑属性中。临时配置通过启动命令中，增加set PORT=8080</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/03/13/ios10-上出现的奇怪的约束问题/" itemprop="url">
-              
-                <span itemprop="name">ios10 上出现的奇怪的约束问题</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-13T15:11:15+08:00"
-              content="2017-03-13" >
-          03-13
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node/" rel="tag">#node</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/17/Linux挂载磁盘和分区备忘/" rel="next" title="Linux挂载磁盘和分区备忘">
+                <i class="fa fa-chevron-left"></i> Linux挂载磁盘和分区备忘
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -281,6 +450,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/09/07/node下环境变量的使用/"
+           data-title="node下环境变量的使用" data-url="http://lonaever.github.io/2018/09/07/node下环境变量的使用/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -300,8 +477,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -351,6 +537,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#process-env的用法"><span class="nav-number">1.</span> <span class="nav-text">process.env的用法</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -454,6 +651,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

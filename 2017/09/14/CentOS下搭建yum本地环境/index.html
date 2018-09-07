@@ -85,24 +85,27 @@
 
 
 <meta name="description" content="环境当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。
-方法一通过ISO镜像来制作源
+通过ISO镜像来制作源
 首先复制一个镜像文件至服务器上。存放在/mnt/iso/Centos.iso
-创建一个挂载目录 mkdir /mnt/centos">
+创建一个挂载目录 mkdir /mnt/centos
+添加到自动运行中vi /etc/fstab追加下面一行/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS下搭建yum本地环境">
 <meta property="og:url" content="http://lonaever.github.io/2017/09/14/CentOS下搭建yum本地环境/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
 <meta property="og:description" content="环境当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。
-方法一通过ISO镜像来制作源
+通过ISO镜像来制作源
 首先复制一个镜像文件至服务器上。存放在/mnt/iso/Centos.iso
-创建一个挂载目录 mkdir /mnt/centos">
-<meta property="og:updated_time" content="2017-09-14T09:20:15.000Z">
+创建一个挂载目录 mkdir /mnt/centos
+添加到自动运行中vi /etc/fstab追加下面一行/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt">
+<meta property="og:updated_time" content="2018-07-19T02:46:22.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS下搭建yum本地环境">
 <meta name="twitter:description" content="环境当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。
-方法一通过ISO镜像来制作源
+通过ISO镜像来制作源
 首先复制一个镜像文件至服务器上。存放在/mnt/iso/Centos.iso
-创建一个挂载目录 mkdir /mnt/centos">
+创建一个挂载目录 mkdir /mnt/centos
+添加到自动运行中vi /etc/fstab追加下面一行/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt">
 
 
 
@@ -313,10 +316,22 @@
 
       
         <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。</p>
-<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><h4 id="通过ISO镜像来制作源"><a href="#通过ISO镜像来制作源" class="headerlink" title="通过ISO镜像来制作源"></a>通过ISO镜像来制作源</h4><ol>
+<h4 id="通过ISO镜像来制作源"><a href="#通过ISO镜像来制作源" class="headerlink" title="通过ISO镜像来制作源"></a>通过ISO镜像来制作源</h4><ol>
 <li>首先复制一个镜像文件至服务器上。存放在<code>/mnt/iso/Centos.iso</code></li>
 <li>创建一个挂载目录 <code>mkdir /mnt/centos</code></li>
+<li>添加到自动运行中<br><code>vi /etc/fstab</code><br>追加下面一行<br><code>/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt/centos  iso9660  defaults,ro,loop  0  0</code></li>
+<li>执行全量命令，重新挂载<code>mount -a</code></li>
+<li><p><code>vi /etc/yum.repos.d/CentOS-Local.repo</code> 新建本地源配置文件<br>添加下面几行</p>
+<pre><code>[local]
+name=local
+baseurl=file:///mnt/centos
+enabled=1
+gpgcheck=1
+gpgkey=file:///mnt/centos/RPM-GPG-KEY-CentOS-7
+</code></pre></li>
 </ol>
+<p>接着重建下yum源缓存<br><code>yum clean  yum repolist</code></p>
+<p>6、可以把/etc/yum.repo.d/下的其他文件都删了。</p>
 
       
     </div>
@@ -424,7 +439,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -470,7 +485,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">2.</span> <span class="nav-text">方法一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过ISO镜像来制作源"><span class="nav-number">2.1.</span> <span class="nav-text">通过ISO镜像来制作源</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过ISO镜像来制作源"><span class="nav-number">1.1.</span> <span class="nav-text">通过ISO镜像来制作源</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

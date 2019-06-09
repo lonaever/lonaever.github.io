@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -63,40 +63,38 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="lonaever, ios, android" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="lonaever, ios, android">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
 
 
 
-<meta name="description" content="这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。
-问题的描述：wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。">
+<meta name="description" content="这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。 问题的描述：wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios使用JSContext的大坑">
 <meta property="og:url" content="http://lonaever.github.io/2016/11/07/ios使用JSContext的大坑/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。
-问题的描述：wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。">
+<meta property="og:description" content="这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。 问题的描述：wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-11-07T09:23:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios使用JSContext的大坑">
-<meta name="twitter:description" content="这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。
-问题的描述：wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。">
+<meta name="twitter:description" content="这个坑真是折磨死我了，最后的解决办法也是相当无奈和不科学。 问题的描述：wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。">
 
 
 
@@ -117,7 +115,7 @@
 
 
 
-  <link rel="canonical" href="http://lonaever.github.io/2016/11/07/ios使用JSContext的大坑/"/>
+  <link rel="canonical" href="http://lonaever.github.io/2016/11/07/ios使用JSContext的大坑/">
 
   <title> ios使用JSContext的大坑 | lonaever的记忆 </title>
 </head>
@@ -148,7 +146,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">lonaever的记忆</span>
       <span class="logo-line-after"><i></i></span>
@@ -175,7 +173,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -185,7 +183,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -195,7 +193,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -205,7 +203,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -215,7 +213,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -310,16 +308,16 @@
 <h3 id="问题的描述："><a href="#问题的描述：" class="headerlink" title="问题的描述："></a>问题的描述：</h3><p>wap支付，webview首先显示了一个来自服务器给的html数据，并非url。通过方法loadHTMLString加载这个页面。这个页面上会自动去跳转，最后到支付结果。支付结果页面有两个按钮，是按照约定执行的js方法。js方法将回调到oc代码中，可是问题就是js的调用，不会回调到oc中执行。</p>
 <a id="more"></a>
 <p>html中的js代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line">    function test(args) &#123;</div><div class="line">      SOBJ.jsCallBack(args);</div><div class="line">    &#125;;</div><div class="line">	</div><div class="line">	&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    function test(args) &#123;</span><br><span class="line">      SOBJ.jsCallBack(args);</span><br><span class="line">    &#125;;</span><br><span class="line">	</span><br><span class="line">	&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>oc中的处理webview的代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">- (void)webViewDidFinishLoad:(UIWebView *)webView</div><div class="line">&#123;</div><div class="line">   [self initJavaScriptContext];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)initJavaScriptContext</div><div class="line">&#123;</div><div class="line">    _context = [_theWebView valueForKeyPath:@&quot;documentView.webView.mainFrame.javaScriptContext&quot;];</div><div class="line">    // 设置处理异常的block回调</div><div class="line">    [_context setExceptionHandler:^(JSContext *ctx, JSValue *value) &#123;</div><div class="line">        NSLog(@&quot;js error: %@&quot;, value);</div><div class="line">    &#125;];</div><div class="line">    _context[@&quot;SOBJ&quot;]=self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)jsCallBack:(id)args</div><div class="line">&#123;</div><div class="line">    NSInteger flag=[args integerValue];</div><div class="line">    NSLog(@&quot;js call back flag=%tu&quot;,flag);</div><div class="line">    dispatch_async(dispatch_get_main_queue(), ^&#123;</div><div class="line">        ...code here...</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">- (void)webViewDidFinishLoad:(UIWebView *)webView</span><br><span class="line">&#123;</span><br><span class="line">   [self initJavaScriptContext];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)initJavaScriptContext</span><br><span class="line">&#123;</span><br><span class="line">    _context = [_theWebView valueForKeyPath:@&quot;documentView.webView.mainFrame.javaScriptContext&quot;];</span><br><span class="line">    // 设置处理异常的block回调</span><br><span class="line">    [_context setExceptionHandler:^(JSContext *ctx, JSValue *value) &#123;</span><br><span class="line">        NSLog(@&quot;js error: %@&quot;, value);</span><br><span class="line">    &#125;];</span><br><span class="line">    _context[@&quot;SOBJ&quot;]=self;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)jsCallBack:(id)args</span><br><span class="line">&#123;</span><br><span class="line">    NSInteger flag=[args integerValue];</span><br><span class="line">    NSLog(@&quot;js call back flag=%tu&quot;,flag);</span><br><span class="line">    dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        ...code here...</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>oc中JSExport的代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@protocol DetailWebProtocol &lt;JSExport&gt;</div><div class="line"></div><div class="line">- (void)jsCallBack:(id)args;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@protocol DetailWebProtocol &lt;JSExport&gt;</span><br><span class="line"></span><br><span class="line">- (void)jsCallBack:(id)args;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <p>如果从本地直接加载一个测试html页面，就如上面所示，写个按钮执行js的test方法。oc中的webview都没有问题。但是通过后台返回的html一直跳转过去就会有问题。</p>
 <p>我怀疑是不是这个跳转的写法，有什么蹊跷。</p>
 <p>经过仔细观察webViewDidFinishLoad回调的时候，webView.request.URL的地址，发现了问题。如果从本地加载的页面，这个值一直都是file:///xxxx/app/这样的形式。但是真不确定是否是这个问题导致的jscontext无法注入。</p>
 <p>后来只好放个大招，手动检测如果到了结果界面，通过url地址来判断。如果是结果页面，就手动让webview再load一次。这时候，webViewDidFinishLoad 中的webView.request.URL终于成了url原本的样子。js的回调也就正常了。</p>
-<h2 id="最后就改成了这个样子："><a href="#最后就改成了这个样子：" class="headerlink" title="最后就改成了这个样子："></a>最后就改成了这个样子：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType</div><div class="line">&#123;</div><div class="line">    if ([request.URL.absoluteString rangeOfString:@&quot;结果页面地址&quot;].length&gt;0) &#123;</div><div class="line">        tem_succ_url=request.URL.absoluteString;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)webViewDidFinishLoad:(UIWebView *)webView</div><div class="line">&#123;</div><div class="line">   if ([webView.request.URL.absoluteString rangeOfString:@&quot;结果页面的url地址&quot;].length&gt;0) &#123;</div><div class="line">        [self initJavaScriptContext];</div><div class="line">    &#125;else &#123;</div><div class="line">        if (tem_succ_url) &#123;</div><div class="line">            手动再加载一遍url</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="最后就改成了这个样子："><a href="#最后就改成了这个样子：" class="headerlink" title="最后就改成了这个样子："></a>最后就改成了这个样子：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType</span><br><span class="line">&#123;</span><br><span class="line">    if ([request.URL.absoluteString rangeOfString:@&quot;结果页面地址&quot;].length&gt;0) &#123;</span><br><span class="line">        tem_succ_url=request.URL.absoluteString;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)webViewDidFinishLoad:(UIWebView *)webView</span><br><span class="line">&#123;</span><br><span class="line">   if ([webView.request.URL.absoluteString rangeOfString:@&quot;结果页面的url地址&quot;].length&gt;0) &#123;</span><br><span class="line">        [self initJavaScriptContext];</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        if (tem_succ_url) &#123;</span><br><span class="line">            手动再加载一遍url</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -380,8 +378,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/07/ios使用JSContext的大坑/"
-           data-title="ios使用JSContext的大坑" data-url="http://lonaever.github.io/2016/11/07/ios使用JSContext的大坑/">
+      <div class="ds-thread" data-thread-key="2016/11/07/ios使用JSContext的大坑/" data-title="ios使用JSContext的大坑" data-url="http://lonaever.github.io/2016/11/07/ios使用JSContext的大坑/">
       </div>
     
   </div>
@@ -406,7 +403,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -417,16 +414,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="lonaever" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="lonaever">
           <p class="site-author-name" itemprop="name">lonaever</p>
           <p class="site-description motion-element" itemprop="description">lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -472,7 +467,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题的描述："><span class="nav-number">1.</span> <span class="nav-text">问题的描述：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后就改成了这个样子："><span class="nav-number"></span> <span class="nav-text">最后就改成了这个样子：</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题的描述："><span class="nav-number">1.</span> <span class="nav-text">问题的描述：</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#最后就改成了这个样子："><span class="nav-number"></span> <span class="nav-text">最后就改成了这个样子：</span></a></li></div>
             
           </div>
         </section>
@@ -488,10 +483,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -63,49 +63,38 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="lonaever, ios, android" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="lonaever, ios, android">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
 
 
 
-<meta name="description" content="环境当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。
-通过ISO镜像来制作源
-首先复制一个镜像文件至服务器上。存放在/mnt/iso/Centos.iso
-创建一个挂载目录 mkdir /mnt/centos
-添加到自动运行中vi /etc/fstab追加下面一行/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt">
+<meta name="description" content="环境当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。 通过ISO镜像来制作源 首先复制一个镜像文件至服务器上。存放在/mnt/iso/Centos.iso 创建一个挂载目录 mkdir /mnt/centos 添加到自动运行中vi /etc/fstab追加下面一行/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS下搭建yum本地环境">
 <meta property="og:url" content="http://lonaever.github.io/2017/09/14/CentOS下搭建yum本地环境/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="环境当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。
-通过ISO镜像来制作源
-首先复制一个镜像文件至服务器上。存放在/mnt/iso/Centos.iso
-创建一个挂载目录 mkdir /mnt/centos
-添加到自动运行中vi /etc/fstab追加下面一行/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt">
-<meta property="og:updated_time" content="2018-07-19T02:46:22.647Z">
+<meta property="og:description" content="环境当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。 通过ISO镜像来制作源 首先复制一个镜像文件至服务器上。存放在/mnt/iso/Centos.iso 创建一个挂载目录 mkdir /mnt/centos 添加到自动运行中vi /etc/fstab追加下面一行/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-19T02:46:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS下搭建yum本地环境">
-<meta name="twitter:description" content="环境当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。
-通过ISO镜像来制作源
-首先复制一个镜像文件至服务器上。存放在/mnt/iso/Centos.iso
-创建一个挂载目录 mkdir /mnt/centos
-添加到自动运行中vi /etc/fstab追加下面一行/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt">
+<meta name="twitter:description" content="环境当系统的环境中没有外网的时候，这个事情就很有必要了。不然全部通过rpm来安装会累死人的。在此记录一下。 通过ISO镜像来制作源 首先复制一个镜像文件至服务器上。存放在/mnt/iso/Centos.iso 创建一个挂载目录 mkdir /mnt/centos 添加到自动运行中vi /etc/fstab追加下面一行/mnt/CentOS-7.0-1406-x86_64-DVD.iso  /mnt">
 
 
 
@@ -126,7 +115,7 @@
 
 
 
-  <link rel="canonical" href="http://lonaever.github.io/2017/09/14/CentOS下搭建yum本地环境/"/>
+  <link rel="canonical" href="http://lonaever.github.io/2017/09/14/CentOS下搭建yum本地环境/">
 
   <title> CentOS下搭建yum本地环境 | lonaever的记忆 </title>
 </head>
@@ -157,7 +146,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">lonaever的记忆</span>
       <span class="logo-line-after"><i></i></span>
@@ -184,7 +173,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -194,7 +183,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -204,7 +193,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -214,7 +203,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -224,7 +213,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -393,8 +382,7 @@ gpgkey=file:///mnt/centos/RPM-GPG-KEY-CentOS-7
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/09/14/CentOS下搭建yum本地环境/"
-           data-title="CentOS下搭建yum本地环境" data-url="http://lonaever.github.io/2017/09/14/CentOS下搭建yum本地环境/">
+      <div class="ds-thread" data-thread-key="2017/09/14/CentOS下搭建yum本地环境/" data-title="CentOS下搭建yum本地环境" data-url="http://lonaever.github.io/2017/09/14/CentOS下搭建yum本地环境/">
       </div>
     
   </div>
@@ -419,7 +407,7 @@ gpgkey=file:///mnt/centos/RPM-GPG-KEY-CentOS-7
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -430,16 +418,14 @@ gpgkey=file:///mnt/centos/RPM-GPG-KEY-CentOS-7
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="lonaever" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="lonaever">
           <p class="site-author-name" itemprop="name">lonaever</p>
           <p class="site-description motion-element" itemprop="description">lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -501,10 +487,10 @@ gpgkey=file:///mnt/centos/RPM-GPG-KEY-CentOS-7
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

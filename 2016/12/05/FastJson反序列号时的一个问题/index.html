@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -63,43 +63,39 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="备忘,fastjson," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="备忘,fastjson,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
 
 
 
-<meta name="description" content="问题最近遇到一个问题，死活反序列化不出，后来发现是JsonFiled的设置名称不能跟其他变量的名字相同。
-比如：
-12345678class A&amp;#123;   @JsonFiled(name=&amp;quot;tp&amp;quot;)   public String pics;      @JsonFiled(name=&amp;quot;pics&amp;quot;)   public String images;&amp;#1">
+<meta name="description" content="问题最近遇到一个问题，死活反序列化不出，后来发现是JsonFiled的设置名称不能跟其他变量的名字相同。 比如： 12345678class A&amp;#123;   @JsonFiled(name=&amp;quot;tp&amp;quot;)   public String pics;      @JsonFiled(name=&amp;quot;pics&amp;quot;)   public String images;&amp;#1">
+<meta name="keywords" content="备忘,fastjson">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FastJson反序列号时的一个问题">
 <meta property="og:url" content="http://lonaever.github.io/2016/12/05/FastJson反序列号时的一个问题/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="问题最近遇到一个问题，死活反序列化不出，后来发现是JsonFiled的设置名称不能跟其他变量的名字相同。
-比如：
-12345678class A&amp;#123;   @JsonFiled(name=&amp;quot;tp&amp;quot;)   public String pics;      @JsonFiled(name=&amp;quot;pics&amp;quot;)   public String images;&amp;#1">
+<meta property="og:description" content="问题最近遇到一个问题，死活反序列化不出，后来发现是JsonFiled的设置名称不能跟其他变量的名字相同。 比如： 12345678class A&amp;#123;   @JsonFiled(name=&amp;quot;tp&amp;quot;)   public String pics;      @JsonFiled(name=&amp;quot;pics&amp;quot;)   public String images;&amp;#1">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-12-05T07:47:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FastJson反序列号时的一个问题">
-<meta name="twitter:description" content="问题最近遇到一个问题，死活反序列化不出，后来发现是JsonFiled的设置名称不能跟其他变量的名字相同。
-比如：
-12345678class A&amp;#123;   @JsonFiled(name=&amp;quot;tp&amp;quot;)   public String pics;      @JsonFiled(name=&amp;quot;pics&amp;quot;)   public String images;&amp;#1">
+<meta name="twitter:description" content="问题最近遇到一个问题，死活反序列化不出，后来发现是JsonFiled的设置名称不能跟其他变量的名字相同。 比如： 12345678class A&amp;#123;   @JsonFiled(name=&amp;quot;tp&amp;quot;)   public String pics;      @JsonFiled(name=&amp;quot;pics&amp;quot;)   public String images;&amp;#1">
 
 
 
@@ -120,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://lonaever.github.io/2016/12/05/FastJson反序列号时的一个问题/"/>
+  <link rel="canonical" href="http://lonaever.github.io/2016/12/05/FastJson反序列号时的一个问题/">
 
   <title> FastJson反序列号时的一个问题 | lonaever的记忆 </title>
 </head>
@@ -151,7 +147,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">lonaever的记忆</span>
       <span class="logo-line-after"><i></i></span>
@@ -178,7 +174,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -188,7 +184,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -198,7 +194,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -208,7 +204,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -218,7 +214,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -311,9 +307,9 @@
       
         <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>最近遇到一个问题，死活反序列化不出，后来发现是JsonFiled的设置名称不能跟其他变量的名字相同。</p>
 <p>比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class A</div><div class="line">&#123;</div><div class="line">   @JsonFiled(name=&quot;tp&quot;)</div><div class="line">   public String pics;</div><div class="line">   </div><div class="line">   @JsonFiled(name=&quot;pics&quot;)</div><div class="line">   public String images;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">   @JsonFiled(name=&quot;tp&quot;)</span><br><span class="line">   public String pics;</span><br><span class="line">   </span><br><span class="line">   @JsonFiled(name=&quot;pics&quot;)</span><br><span class="line">   public String images;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这时候jsonstr如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;tp&quot;:&quot;111111.jpg&quot;&#125;</div><div class="line"></div><div class="line">执行</div><div class="line">JSON.parseObject(jsonstr,A.class)</div><div class="line"></div><div class="line">结果会是什么：</div><div class="line">解析后，pics=null</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;tp&quot;:&quot;111111.jpg&quot;&#125;</span><br><span class="line"></span><br><span class="line">执行</span><br><span class="line">JSON.parseObject(jsonstr,A.class)</span><br><span class="line"></span><br><span class="line">结果会是什么：</span><br><span class="line">解析后，pics=null</span><br></pre></td></tr></table></figure>
 <h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>把pics的变量名字，改成其他。</p>
 
       
@@ -384,8 +380,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/05/FastJson反序列号时的一个问题/"
-           data-title="FastJson反序列号时的一个问题" data-url="http://lonaever.github.io/2016/12/05/FastJson反序列号时的一个问题/">
+      <div class="ds-thread" data-thread-key="2016/12/05/FastJson反序列号时的一个问题/" data-title="FastJson反序列号时的一个问题" data-url="http://lonaever.github.io/2016/12/05/FastJson反序列号时的一个问题/">
       </div>
     
   </div>
@@ -410,7 +405,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -421,16 +416,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="lonaever" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="lonaever">
           <p class="site-author-name" itemprop="name">lonaever</p>
           <p class="site-description motion-element" itemprop="description">lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -492,10 +485,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -63,61 +63,39 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="node," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="node,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
 
 
 
 
 
 
-<meta name="description" content="使用Express框架的时候，对于环境变量常看见是这样使用的：
-
-app.js里面有这样的写法
-res.locals.message = err.message;
-  res.locals.error = req.app.get(&amp;apos;env&amp;apos;) === &amp;apos;development&amp;apos; ? err : {};
-
-bin/www里面式样写的
-/**
- * Get po">
+<meta name="description" content="使用Express框架的时候，对于环境变量常看见是这样使用的：  app.js里面有这样的写法 res.locals.message = err.message;   res.locals.error = req.app.get(&amp;apos;env&amp;apos;) === &amp;apos;development&amp;apos; ? err : {};  bin/www里面式样写的 /**  * Get po">
+<meta name="keywords" content="node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node下环境变量的使用">
 <meta property="og:url" content="http://lonaever.github.io/2018/09/07/node下环境变量的使用/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="使用Express框架的时候，对于环境变量常看见是这样使用的：
-
-app.js里面有这样的写法
-res.locals.message = err.message;
-  res.locals.error = req.app.get(&amp;apos;env&amp;apos;) === &amp;apos;development&amp;apos; ? err : {};
-
-bin/www里面式样写的
-/**
- * Get po">
-<meta property="og:updated_time" content="2018-09-07T02:57:19.047Z">
+<meta property="og:description" content="使用Express框架的时候，对于环境变量常看见是这样使用的：  app.js里面有这样的写法 res.locals.message = err.message;   res.locals.error = req.app.get(&amp;apos;env&amp;apos;) === &amp;apos;development&amp;apos; ? err : {};  bin/www里面式样写的 /**  * Get po">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-07T02:57:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node下环境变量的使用">
-<meta name="twitter:description" content="使用Express框架的时候，对于环境变量常看见是这样使用的：
-
-app.js里面有这样的写法
-res.locals.message = err.message;
-  res.locals.error = req.app.get(&amp;apos;env&amp;apos;) === &amp;apos;development&amp;apos; ? err : {};
-
-bin/www里面式样写的
-/**
- * Get po">
+<meta name="twitter:description" content="使用Express框架的时候，对于环境变量常看见是这样使用的：  app.js里面有这样的写法 res.locals.message = err.message;   res.locals.error = req.app.get(&amp;apos;env&amp;apos;) === &amp;apos;development&amp;apos; ? err : {};  bin/www里面式样写的 /**  * Get po">
 
 
 
@@ -138,7 +116,7 @@ bin/www里面式样写的
 
 
 
-  <link rel="canonical" href="http://lonaever.github.io/2018/09/07/node下环境变量的使用/"/>
+  <link rel="canonical" href="http://lonaever.github.io/2018/09/07/node下环境变量的使用/">
 
   <title> node下环境变量的使用 | lonaever的记忆 </title>
 </head>
@@ -169,7 +147,7 @@ bin/www里面式样写的
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">lonaever的记忆</span>
       <span class="logo-line-after"><i></i></span>
@@ -196,7 +174,7 @@ bin/www里面式样写的
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -206,7 +184,7 @@ bin/www里面式样写的
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -216,7 +194,7 @@ bin/www里面式样写的
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -226,7 +204,7 @@ bin/www里面式样写的
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -236,7 +214,7 @@ bin/www里面式样写的
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -298,7 +276,7 @@ bin/www里面式样写的
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -428,6 +406,10 @@ Windows 平台使用如下命令：
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/06/10/再次重装mac/" rel="prev" title="再次重装mac">
+                再次重装mac <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -452,8 +434,7 @@ Windows 平台使用如下命令：
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2018/09/07/node下环境变量的使用/"
-           data-title="node下环境变量的使用" data-url="http://lonaever.github.io/2018/09/07/node下环境变量的使用/">
+      <div class="ds-thread" data-thread-key="2018/09/07/node下环境变量的使用/" data-title="node下环境变量的使用" data-url="http://lonaever.github.io/2018/09/07/node下环境变量的使用/">
       </div>
     
   </div>
@@ -478,7 +459,7 @@ Windows 平台使用如下命令：
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -489,16 +470,14 @@ Windows 平台使用如下命令：
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="lonaever" />
+          <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="lonaever">
           <p class="site-author-name" itemprop="name">lonaever</p>
           <p class="site-description motion-element" itemprop="description">lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -560,10 +539,10 @@ Windows 平台使用如下命令：
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

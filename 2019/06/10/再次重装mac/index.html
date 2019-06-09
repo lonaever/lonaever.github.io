@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="备忘,">
+  <meta name="keywords" content="lonaever, ios, android">
 
 
 
@@ -84,18 +84,17 @@
 
 
 
-<meta name="description" content="现在基本是使用android6.0以上的样式，作为AppTheme了。配置样式真的很烦，一层又一层。将一些常用的地方，做个记录是必须的。">
-<meta name="keywords" content="备忘">
+<meta name="description" content="lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用android样式收集">
-<meta property="og:url" content="http://lonaever.github.io/2016/08/17/常用android样式收集/index.html">
+<meta property="og:title" content="再次重装mac">
+<meta property="og:url" content="http://lonaever.github.io/2019/06/10/再次重装mac/index.html">
 <meta property="og:site_name" content="lonaever的记忆">
-<meta property="og:description" content="现在基本是使用android6.0以上的样式，作为AppTheme了。配置样式真的很烦，一层又一层。将一些常用的地方，做个记录是必须的。">
+<meta property="og:description" content="lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-08-19T06:20:08.000Z">
+<meta property="og:updated_time" content="2019-06-09T16:30:09.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用android样式收集">
-<meta name="twitter:description" content="现在基本是使用android6.0以上的样式，作为AppTheme了。配置样式真的很烦，一层又一层。将一些常用的地方，做个记录是必须的。">
+<meta name="twitter:title" content="再次重装mac">
+<meta name="twitter:description" content="lonaever的blog；ios、android技术知识点；记录美丽瞬间；记忆记不住的">
 
 
 
@@ -116,9 +115,9 @@
 
 
 
-  <link rel="canonical" href="http://lonaever.github.io/2016/08/17/常用android样式收集/">
+  <link rel="canonical" href="http://lonaever.github.io/2019/06/10/再次重装mac/">
 
-  <title> 常用android样式收集 | lonaever的记忆 </title>
+  <title> 再次重装mac | lonaever的记忆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +257,7 @@
             
             
               
-                常用android样式收集
+                再次重装mac
               
             
           </h1>
@@ -270,38 +269,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T10:09:10+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2019-06-10T00:30:09+08:00" content="2019-06-10">
+              2019-06-10
             </time>
           </span>
 
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/17/常用android样式收集/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/常用android样式收集/" itemprop="commentsCount"></span>
+                <a href="/2019/06/10/再次重装mac/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/06/10/再次重装mac/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -324,43 +304,7 @@
       
 
       
-        <p>现在基本是使用android6.0以上的样式，作为AppTheme了。配置样式真的很烦，一层又一层。将一些常用的地方，做个记录是必须的。</p>
-<a id="more"></a>
-<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><p>创建项目后，就是这三个颜色需要设置。</p>
-<pre><code>&lt;item name=&quot;colorPrimary&quot;&gt;@color/colorPrimary&lt;/item&gt;
-&lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/colorPrimaryDark&lt;/item&gt;
-&lt;item name=&quot;colorAccent&quot;&gt;@color/colorAccent&lt;/item&gt;
-</code></pre><p>colorPrimary 指定的是如Actionbar的背景色。<br>colorPrimaryDark 指定状态栏背景色。<br>colorAccent 指定如Checkbox，RadioButton的重点着色。</p>
-<h3 id="额外配置"><a href="#额外配置" class="headerlink" title="额外配置"></a>额外配置</h3><ul>
-<li><p>指定所有view的背景色。</p>
-<pre><code>&lt;item name=&quot;android:windowBackground&quot;&gt;@color/colorWindowBg&lt;/item&gt; 
-</code></pre></li>
-<li><p>全局设定activity切换动画</p>
-<pre><code>&lt;item name=&quot;android:windowAnimationStyle&quot;&gt;@style/activityAnimation&lt;/item&gt;
-
-&lt;style name=&quot;activityAnimation&quot; parent=&quot;@android:style/Animation&quot;&gt;
-&lt;item name=&quot;android:activityOpenEnterAnimation&quot;&gt;@anim/pull_in_right&lt;/item&gt;
-&lt;item name=&quot;android:activityOpenExitAnimation&quot;&gt;@anim/push_out_left&lt;/item&gt;
-&lt;item name=&quot;android:activityCloseEnterAnimation&quot;&gt;@anim/pull_in_left&lt;/item&gt;
-&lt;item name=&quot;android:activityCloseExitAnimation&quot;&gt;@anim/push_out_right&lt;/item&gt;
-&lt;/style&gt;
-</code></pre></li>
-<li><p>actionBar上的字体大小</p>
-<pre><code>&lt;item name=&quot;actionMenuTextAppearance&quot;&gt;@style/ActionMenuText&lt;/item&gt;
-
-&lt;style name=&quot;ActionMenuText&quot; parent=&quot;TextAppearance.AppCompat.Widget.ActionBar.Menu&quot;&gt;
-&lt;item name=&quot;android:textSize&quot;&gt;18sp&lt;/item&gt;
-&lt;item name=&quot;android:textStyle&quot;&gt;normal&lt;/item&gt;
-&lt;/style&gt;
-</code></pre></li>
-<li><p>actionBar上字体的颜色</p>
-<pre><code>&lt;item name=&quot;android:textColorPrimary&quot;&gt;@color/md_green_50&lt;/item&gt;
-</code></pre></li>
-<li><p>actionBar上的homeUp图标</p>
-<pre><code>&lt;item name=&quot;homeAsUpIndicator&quot;&gt;@mipmap/ab_back&lt;/item&gt;
-</code></pre></li>
-</ul>
-
+        
       
     </div>
 
@@ -380,28 +324,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/备忘/" rel="tag">#备忘</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/30/UITabBar配置/" rel="next" title="ios UITabBar配置">
-                <i class="fa fa-chevron-left"></i> ios UITabBar配置
+              <a href="/2018/09/07/node下环境变量的使用/" rel="next" title="node下环境变量的使用">
+                <i class="fa fa-chevron-left"></i> node下环境变量的使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/17/hexo很方便，很美妙/" rel="prev" title="hexo很方便，很美妙">
-                hexo很方便，很美妙 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -427,7 +361,7 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/17/常用android样式收集/" data-title="常用android样式收集" data-url="http://lonaever.github.io/2016/08/17/常用android样式收集/">
+      <div class="ds-thread" data-thread-key="2019/06/10/再次重装mac/" data-title="再次重装mac" data-url="http://lonaever.github.io/2019/06/10/再次重装mac/">
       </div>
     
   </div>
@@ -516,7 +450,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础配置"><span class="nav-number">1.</span> <span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#额外配置"><span class="nav-number">2.</span> <span class="nav-text">额外配置</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
